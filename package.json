@@ -1,0 +1,17 @@
+{
+  "name": "synapsefi-dev-ui-docs",
+  "scripts": {
+    "docz:dev": "docz dev",
+    "docz:build": "docz build"
+  },
+  "devDependencies": {
+    "docz": "^0.13.7",
+    "docz-theme-default": "^0.13.7"
+  },
+  "dependencies": {
+    "react-animate-height": "^2.0.7",
+    "react-number-format": "^4.0.6",
+    "styled-components": "^4.1.3",
+    "synapsefi-dev-ui": "^1.0.119"
+  }
+}
