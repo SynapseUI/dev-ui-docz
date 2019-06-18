@@ -801,7 +801,16 @@
     globals "^11.1.0"
     lodash "^4.17.10"
 
-"@babel/types@^7.0.0", "@babel/types@^7.1.6", "@babel/types@^7.2.0", "@babel/types@^7.2.2", "@babel/types@^7.3.0":
+"@babel/types@^7.0.0":
+  version "7.3.4"
+  resolved "https://registry.yarnpkg.com/@babel/types/-/types-7.3.4.tgz#bf482eaeaffb367a28abbf9357a94963235d90ed"
+  integrity sha512-WEkp8MsLftM7O/ty580wAmZzN1nDmCACc5+jFzUt+GUFNNIi3LdRlueYz0YIlmJhlZx1QYDMZL5vdWCL0fNjFQ==
+  dependencies:
+    esutils "^2.0.2"
+    lodash "^4.17.11"
+    to-fast-properties "^2.0.0"
+
+"@babel/types@^7.1.6", "@babel/types@^7.2.0", "@babel/types@^7.2.2", "@babel/types@^7.3.0":
   version "7.3.0"
   resolved "https://registry.yarnpkg.com/@babel/types/-/types-7.3.0.tgz#61dc0b336a93badc02bf5f69c4cd8e1353f2ffc0"
   integrity sha512-QkFPw68QqWU1/RVPyBe8SO7lXbPfjtqAxRYQKpFpaB8yMq7X2qAqfwK5LKoQufEkSmO5NQ70O6Kc3Afk03RwXw==
@@ -1614,7 +1623,7 @@ babel-plugin-react-docgen@^2.0.0:
     react-docgen "^3.0.0"
     recast "^0.14.7"
 
-"babel-plugin-styled-components@>= 1", babel-plugin-styled-components@^1.6.3:
+"babel-plugin-styled-components@>= 1", babel-plugin-styled-components@^1.10.0:
   version "1.10.0"
   resolved "https://registry.yarnpkg.com/babel-plugin-styled-components/-/babel-plugin-styled-components-1.10.0.tgz#ff1f42ad2cc78c21f26b62266b8f564dbc862939"
   integrity sha512-sQVKG8irFXx14ZfaK1bBePirfkacl3j8nZwSZK+ZjsbnadRHKQTbhXbe/RB1vT6Vgkz45E+V95LBq4KqdhZUNw==
@@ -7822,11 +7831,12 @@ swap-case@^1.1.0:
     upper-case "^1.1.1"
 
 synapsefi-dev-ui@^1.0.119:
-  version "1.0.119"
-  resolved "https://registry.yarnpkg.com/synapsefi-dev-ui/-/synapsefi-dev-ui-1.0.119.tgz#58057a5f6dfa67b793d7fb1ad6addd507b4fe045"
-  integrity sha512-2J8K8hAJ97HbrDdQcE128vNvsPTEGQLV2OsfMsHgYPjkxi4X3p9Wt5hC7QXOxQw8UJXUQtsycTcszNYQ3SSbfQ==
+  version "1.0.139"
+  resolved "https://registry.yarnpkg.com/synapsefi-dev-ui/-/synapsefi-dev-ui-1.0.139.tgz#7f41fbf3b2d957f29e00b6bbfc34d7a89c5771ad"
+  integrity sha512-Q5qaVsqMX0IIdmUP++mmIjPggNSu/z93Sgw0HKXoGQM7Sost7inTYG+7ReT0qHZ1p+BE+RkldI+7UVfLiy89Kg==
   dependencies:
-    babel-plugin-styled-components "^1.6.3"
+    babel-plugin-styled-components "^1.10.0"
+    react-router-dom "^4.3.1"
 
 tapable@^1.0.0, tapable@^1.1.0:
   version "1.1.1"

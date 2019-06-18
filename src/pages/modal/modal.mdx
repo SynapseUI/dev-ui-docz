@@ -1,0 +1,56 @@
+---
+name: Modal
+route: /modal
+---
+
+# Modal
+
+import { Playground, PropsTable } from 'docz'
+import { Modal, Button } from 'synapsefi-dev-ui';
+import FlexAlign from '../../common/FlexAlign';
+import ModalContainer from './ModalContainer.state';
+
+## Basic
+<ModalContainer />
+
+```jsx
+  <Modal
+    width="510px"
+    headerText={'Add New Login'}
+    isOpen={isOpen}
+    closeModal={() => this.setState({ isOpen: false })}
+    btnObjs={[
+      {
+        text: 'Cancel',
+        size: 'small',
+        style: 'tertiary',
+        onClick: () => this.setState({ isOpen: false }),
+      },
+      {
+        text: 'Apply Changes',
+        size: 'small',
+        style: 'primary',
+        onClick: () => console.log('Submission'),
+      },
+    ]}
+  >
+    <div style={{ height: '100px' }}>
+      <p>Inner Modal</p>
+    </div>
+  </Modal>
+
+  <Button onClick={() => this.setState({ isOpen: true })}>Open Modal</Button>
+```
+
+## Props
+
+| Property | Type | Required | Description |
+| :------- | :--- | :------- |  :---------- |
+| isOpen    | `bool` | true | Defines when the modal is visible |
+| closeModal    | `function` | true | Function that hides the modal, needed for clicking outside content |
+| className    | `string` | false   | className of input |
+| headerText    | `string` | false   | Header Text |
+| width    | `string` | false   | Width of the Modal |
+| height    | `string` | false   | Height of the Modal |
+| btnObjs    | `array` | false   | Button information, located at the foot of the Modal |
+| children    | `componet`/`DOMelement` | false   | Children componets |

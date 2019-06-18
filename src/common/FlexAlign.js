@@ -7,8 +7,8 @@ const Flex = styled.div`
   justify-content: space-between;
 `;
 
-const FlexAlign = ({ children }) => {
-  return <Flex>{ children }</Flex>
+const FlexAlign = ({ children, style }) => {
+  return <Flex style={style}>{ children }</Flex>
 };
 
 export default FlexAlign;
