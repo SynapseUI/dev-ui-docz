@@ -29,6 +29,19 @@ import TableContainer from './Table.state';
     page={currentPage}
     page_count={Object.keys(tableData).length}
     total_count={12}
+
+    // Top Bar (Optional Props)
+    topBarComponent={
+      <DownloadButton />
+    }
+
+    // Filter
+    filterFormData={filterData}
+    filters={filters}
+    onFilter={this.onFilter}
+    isFetching={this.state.isFetching}
+    filterColumnLimit={2}
+    filterCSS={`grid-template-columns: 2fr 1fr;`}
   />
 ```
 
