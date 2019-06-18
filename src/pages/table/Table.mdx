@@ -1,0 +1,225 @@
+---
+name: Table
+route: /table
+---
+
+# Table
+
+import { Playground, PropsTable } from 'docz'
+import { Table } from 'synapsefi-dev-ui';
+import TableContainer from './Table.state';
+
+## Basic
+<TableContainer />
+
+```jsx
+  <Table
+    // title="Users"
+
+    // Data files
+    tableData={tableData[currentPage]}
+    headData={headerData}
+    displayLegend={displayLegend}
+
+    // OnClick actions
+    handleRowOnClick={this.handleOnClick}
+    onClickPageChange={this.onClickPageChange}
+
+    // pass from redux store
+    page={currentPage}
+    page_count={Object.keys(tableData).length}
+    total_count={12}
+
+    // Top Bar (Optional Props)
+    topBarComponent={
+      <DownloadButton />
+    }
+
+    // Filter
+    filterFormData={filterData}
+    filters={filters}
+    onFilter={this.onFilter}
+    isFetching={this.state.isFetching}
+    filterColumnLimit={2}
+    filterCSS={`grid-template-columns: 2fr 1fr;`}
+  />
+```
+
+## Table Data
+
+```jsx
+  //table.data
+  module.exports = {
+  1: {
+    1234: {
+      id: '1234',
+      username: 'Jim',
+      permission: 'SEND-AND-RECEIVE',
+      date: '10/1/2013',
+      business: 'Great Company',
+      amount: -85.00,
+    },
+    ...
+  },
+  2: {
+    1238: {
+      id: '1238',
+      username: 'Carry',
+      permission: 'SEND-AND-RECEIVE',
+      date: '10/1/2013',
+      business: 'Great Company',
+      amount: 3,
+    },
+    ...
+  //
+```
+
+## Header Data
+
+```jsx
+  //headerData.data
+  module.exports = {
+    id: {
+      minWidth: '80px',
+      text: 'User Id'
+    },
+    username: {
+      minWidth: '80px',
+      text: 'Username',
+      sortable: true
+    },
+    amount: {
+      minWidth: '40px',
+      text: 'Amount',
+      rightAlign: true,
+      sortable: true
+    },
+    permission: {
+      minWidth: '80px',
+      text: 'Permission',
+      sortable: true
+    },
+    date: {
+      minWidth: '85px',
+      text: 'Date Joined',
+      sortable: true
+    }
+  }
+  //
+```
+
+## Display Legend
+
+```jsx
+const displayLegend = (key, value, options = {}) => {
+  const { rowValues = {} } = options;
+
+  switch (key) {
+    case 'username':
+      return <p>{ value } { rowValues.id }</p>
+    case 'permission':
+      return value ? <StatusTag status={value} /> : ''
+    case 'amount':
+      return value && value.toLocaleString('en', {minimumFractionDigits: 2}) + ' USD'
+    default:
+      return value;
+  }
+}
+```
+
+## Filter Data
+
+```jsx
+import { FormTypeConstants } from 'synapsefi-dev-ui';
+
+export const initialState = (props) => ({
+  type: props.type || '',
+  allowed: props.allowed || [],
+  date: props.date || '',
+});
+
+export const formData = props => {
+  const { filterField } = props;
+
+  return [
+    {
+      isChild: true,
+      options: {
+        NODE: { text: 'in Node ID' },
+        USER: { text: 'in User ID' },
+      },
+      placeholder: 'Search by Node or User ID',
+      propName: 'searchBarInput',
+      noGrid: true
+    },
+    {
+      formType: FormTypeConstants.TYPE_DROPDOWN,
+      placeholder: 'Node Type',
+      propName: 'type',
+      options: [
+        { key: 'DEPOSIT-US', text: 'DEPOSIT-US' }
+      ],
+      noGrid: true
+    },
+    {
+      formType: FormTypeConstants.TYPE_DROPDOWN,
+      placeholder: 'Node permissions',
+      propName: 'allowed',
+      multiselect: true,
+      options: [
+        { key: 'CREDIT', text: 'Credit' },
+        { key: 'DEBIT', text: 'Debit' },
+        { key: 'CREDIT-AND-DEBIT', text: 'Credit and Debit' },
+        { key: 'PENDING', text: 'Pending' },
+        { key: 'INACTIVE', text: 'Inactive' },
+        { key: 'LOCKED', text: 'Locked' }
+      ],
+      noGrid: true
+    },
+    {
+      formType: FormTypeConstants.TYPE_INPUT,
+      placeholder: 'Created Date',
+      propName: 'date',
+      noGrid: true
+    }
+  ];
+};
+
+export const getMongoDBQuery = (values) => {
+  const { searchBarInput, searchBarType } = values;
+
+  let idSearch = {};
+
+  if (searchBarInput && searchBarType) {
+    idSearch = { [typeLegend[searchBarType]]: searchBarInput };
+  }
+
+  return {
+    ...(!_.isEmpty(idSearch) && idSearch),
+    ...(!_.isEmpty(values.type) && { type: values.type }),
+    ...(!_.isEmpty(values.allowed) && { allowed: { $in: values.allowed } })
+  };
+};
+
+```
+
+## Props
+
+| Property | Type | Required | Description |
+| :------- | :--- | :------- |  :---------- |
+| tableData    | `object` | true | Main table data |
+| headData    | `object` | true | header styling props |
+| displayLegend    | `function` | true | outputs custom displays for td |
+| handleRowOnClick    | `function` | true | onClick on the row |
+| onClickPageChange    | `function` | true | onClick on the page change |
+| page    | `integer/string` | true | current page number |
+| page_count    | `integer/string` | true | total number of pages |
+| total_count    | `integer/string` | true | total number of object types |
+| className    | `string` | false   | className of input |
+| topBarComponent | `component` | false | component renders above th, receives "selection" from Table|
+| filterData    | `object` | false | filter form data |
+| filters    | `object` | false | previous filter  |
+| onFilter | `function` | false | function receives filter form values and can fire a new request |
+| filterColumnLimit | `interger` | false | number of filter form columns |
+| filterCSS | `string` | false | custom css for the filter form|
+| title | `string` | false | name of the entry type |

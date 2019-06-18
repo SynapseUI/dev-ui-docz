@@ -13,6 +13,8 @@ class DropdownContaienr extends React.Component {
     return (
       <Dropdown
         value={selection}
+        style={{ zIndex: '1000' }}
+        placeholder="Select a Pet"
         width="300px"
         onChange={(e, value, field) => this.setState({ selection: value })}
         options={
