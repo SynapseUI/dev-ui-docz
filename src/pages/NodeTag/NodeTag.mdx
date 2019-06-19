@@ -1,0 +1,39 @@
+---
+name: NodeTag
+route: /nodeTag
+menu: Tag
+---
+
+# NodeTag
+
+import { PropsTable } from 'docz'
+import { NodeTag } from 'synapsefi-dev-ui';
+import NodeTagContainer from './NodeTag.state';
+
+## Basic
+<NodeTagContainer />
+
+```jsx
+<NodeTag nodeType="ACH-US" />
+```
+
+## Grabbing Node Info
+
+```jsx
+getNodeInformation('EXTERNAL-US')
+
+/* 
+  returns {
+    icon: SvgIcons.EXTERNAL_US...
+    nodeSection: 'payment',
+    tag: <StatusTag status="EXTERNAL-US" />
+    text: 'External-US'
+  }
+*/
+```
+
+## Props
+
+| Property | Type | Required | Description |
+| :------- | :--- | :------- |  :---------- |
+| nodeType    | `string` | true | Value of the node, if not a valid node type then renders as a General Node |
