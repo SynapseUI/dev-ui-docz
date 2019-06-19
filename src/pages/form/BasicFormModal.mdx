@@ -1,0 +1,122 @@
+---
+name: BasicFormModal
+route: /basicformModal
+menu: Form
+---
+
+# BasicFormModal
+
+import { Playground, PropsTable } from 'docz'
+import { BasicForm } from 'synapsefi-dev-ui';
+import BasicFormModalContainer from './BasicFormModal.state';
+
+## Basic
+
+<BasicFormModalContainer />
+
+```jsx
+  <Button onClick={() => this.setState({ isOpen: true })}>open modal</Button>
+
+  <BasicFormModal
+    headerText="Basic Form Modal"
+    width="500px"
+    isOpen={this.state.isOpen}
+    closeModal={() => this.setState({ isOpen: false })}
+    { ...basicData }
+  >
+    <p>children can go here</p>
+  </BasicFormModal>
+```
+
+## Form Data
+
+```jsx
+//basicForm.data.js
+import { FormTypeConstants } from '../../../../../src/index';
+
+/** Required */
+export const initialState = () => ({
+  email: '',
+  pets: '',
+  custom: 'child'
+});
+
+export const formData = [
+  {
+    propName: 'pets',
+    formType: FormTypeConstants.TYPE_DROPDOWN,
+    label: 'Pets',
+    placeholder: 'Select a pet type',
+    options: [
+      { key: 'cat', text: 'Cat' },
+      { key: 'dog', text: 'Dog' },
+      { key: 'goose', text: 'Goose' },
+    ]
+  },
+  {
+    propName: 'email',
+    formType: FormTypeConstants.TYPE_INPUT,
+    label: 'Email'
+  },
+  {
+    propName: 'custom',
+    isChild: true
+  },
+];
+
+export const handleSubmit = (values, props) => {
+  return new Promise(function(resolve, reject) {
+    setTimeout(function() {
+      console.log('Submitting', values);
+      resolve('foo');
+    }, 1000);
+  });
+};
+
+/** Optional Actions */
+
+export const handleValidation = (values, props) => {
+  return {
+    ...(_.isEmpty(values.email) && { email: 'Email can not be empty'}),
+  }
+};
+
+export const handleCancel = () => {
+  console.log('Cancel');
+}
+
+export const buttonSettings = {
+  cancelButton: {
+    size: 'medium'
+  },
+  submitButton: {
+    size: 'medium',
+    text: 'Custom Submit'
+  }
+};
+```
+
+## Props
+
+| Property | Type | Required | Description |
+| :------- | :--- | :------- |  :---------- |
+| initialState    | `function` | true | Receives props and outputs the initial state |
+| formData    | `array` | true   | List of objects, each with component data |
+| className    | `string` | false   | className of the form |
+| handleSubmit    | `function` | true   | Receives form's state and props, if async will trigger a isLoading state |
+| handleValidation | `function` | false | Receives form's state and props, runs before handleSubmit, returns object with properties having errors i.e. { email: 'Not valid' }|
+| handleCancel | `function` | false | Cancel action |
+| buttonSettings    | `object` | false  | `cancelButton` and  `submitButton` button props, See Buttons. ie { {submitButton: {size: 'medium', text: 'Submit' } }|
+| headerText    | `string` | false  | Header string |
+| isOpen    | `boolean` | true  | Defines if modal is open |
+| closeModal    | `function` | true  | Function fires on outside click or upper right X button |
+| width    | `string` | true  | width of the modal |
+
+## Form Data Props
+| Property | Type | Required | Description |
+| :------- | :--- | :------- |  :---------- |
+| propName    | `string` | true | Defines which value of the Form's state to pass |
+| formType    | `string` | false | Defines which of the prebuilt components to build |
+| label    | `string` | false | String value of the label |
+| options    | `string` | false | Array of key and text values, applies to `Dropdown`, `CheckBoxGroup` and `RadioGroup` |
+| isChild    | `boolean` | false | Defines order of children prop, pops the children list and pass props to it. Needs `propName` in order to pass state, errors and handleOnChange as props.|
