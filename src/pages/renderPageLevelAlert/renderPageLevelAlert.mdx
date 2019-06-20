@@ -1,0 +1,17 @@
+---
+name: Page Level Alerts
+route: /renderPageLevelAlert
+---
+
+# Page Level Alert
+
+import AlertsContainer from './renderPageLevelAlert.state';
+
+## Basic
+<AlertsContainer />
+
+```jsx
+  renderPageLevelAlert({ type: 'SUCCESS', message: 'Good Job' });
+  renderPageLevelAlert({ type: 'ERROR', message: '...I AM ERROR' });
+  renderPageLevelAlert({ type: 'WARNING', message: 'You forgot to add keys didnt you ' });
+```
