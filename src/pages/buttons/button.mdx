@@ -12,19 +12,25 @@ import FlexAlign from '../../common/FlexAlign';
 
 ## Basic
 
-<Playground>
-  <Button onClick={() => console.log('This is an alert')}>Click</Button>
-</Playground>
+<Button onClick={() => console.log('This is an alert')}>Click</Button>
+
+```jsx
+<Button onClick={() => console.log('This is an alert')}>Click</Button>
+```
 
 ## Styles
 
-<Playground>
-  <FlexAlign>
-    <Button primary onClick={() => console.log('Primary')}>Primary</Button>
-    <Button secondary onClick={() => console.log('Secondary')}>Secondary</Button>
-    <Button tertiary onClick={() => console.log('Tertiary')}>Tertiary</Button>
-  </FlexAlign>
-</Playground>
+<FlexAlign>
+  <Button primary onClick={() => console.log('Primary')}>Primary</Button>
+  <Button secondary onClick={() => console.log('Secondary')}>Secondary</Button>
+  <Button tertiary onClick={() => console.log('Tertiary')}>Tertiary</Button>
+</FlexAlign>
+
+```jsx
+<Button primary onClick={() => console.log('Primary')}>Primary</Button>
+<Button secondary onClick={() => console.log('Secondary')}>Secondary</Button>
+<Button tertiary onClick={() => console.log('Tertiary')}>Tertiary</Button>
+```
 
 ## Props
 
