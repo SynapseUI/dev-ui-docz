@@ -1,19 +1,19 @@
 ---
-name: RadioGroup
-route: /radioGroup
+name: CheckboxGroup
+route: /checkboxGroup
 ---
 
-# RadioGroup
+# CheckboxGroup
 
 import { Playground, PropsTable } from 'docz'
-import { RadioGroup } from 'synapsefi-dev-ui';
-import RadioGroupContainer from './RadioGroup.state';
+import { CheckboxGroup } from 'synapsefi-dev-ui';
+import CheckboxGroupContainer from './CheckboxGroup.state';
 
 ## Basic
-<RadioGroupContainer />
+<CheckboxGroupContainer />
 
 ```jsx
-  <RadioGroup
+  <CheckboxGroup
     value={this.state.product}
     propName="products"
     onChange={(e, value) => this.setState({ product: value })}
@@ -27,10 +27,10 @@ import RadioGroupContainer from './RadioGroup.state';
 ```
 
 ## Classic Style
-<RadioGroupContainer selectionType="classic" />
+<CheckboxGroupContainer selectionType="classic" />
 
 ```jsx
-  <RadioGroup
+  <CheckboxGroup
     selectionType="classic"
     value={this.state.product}
     propName="products"
@@ -47,10 +47,10 @@ import RadioGroupContainer from './RadioGroup.state';
 
 | Property | Type | Required | Description |
 | :------- | :--- | :------- |  :---------- |
-| value    | `string`/`array` | true | Value of the radio group |
+| value    | `string`/`array` | true | Value of the checkbox group |
 | propName    | `string` | false   | Property name |
-| className    | `string` | false   | className of radio group |
-| label    | `string` | false   | Label of radio group |
-| onChange | `function` | true | Function fired when radio group's `onChange` event triggers. Arguments: (e, value, propName).|
-| selectionType    | `string` | false  | If equals to `classic` then radio group changes style |
-| width    | `string` | false  | The width of each radio button |
+| className    | `string` | false   | className of checkbox group |
+| label    | `string` | false   | Label of checkbox group |
+| onChange | `function` | true | Function fired when checkbox group's `onChange` event triggers. Arguments: (e, value, propName).|
+| selectionType    | `string` | false  | If equals to `classic` then checkbox group changes style |
+| width    | `string` | false  | The width of each checkbox |

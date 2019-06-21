@@ -1,7 +1,7 @@
 import React from 'react';
-import { RadioGroup } from 'synapsefi-dev-ui';
+import { CheckboxGroup } from 'synapsefi-dev-ui';
 
-class RadioGroupContainer extends React.Component {
+class CheckboxGroupContainer extends React.Component {
   constructor(props) {
     super(props);
     this.state = { product: '' }
@@ -12,12 +12,12 @@ class RadioGroupContainer extends React.Component {
     const { product } = this.state;
 
     return (
-      <RadioGroup
+      <CheckboxGroup
         selectionType={selectionType}
         value={product}
         propName="products"
         onChange={(e, value) => this.setState({ product: value })}
-        width="300px"
+        width="250px"
         options={[
           { key: 'DEPOSIT-US', text: 'Deposit Product' },
           { key: 'CARD-US', text: 'Card Issusance' },
@@ -28,4 +28,4 @@ class RadioGroupContainer extends React.Component {
   }
 }
 
-export default RadioGroupContainer;
+export default CheckboxGroupContainer;
