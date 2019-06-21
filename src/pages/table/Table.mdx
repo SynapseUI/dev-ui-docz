@@ -205,21 +205,21 @@ export const getMongoDBQuery = (values) => {
 
 ## Props
 
-| Property | Type | Required | Description |
-| :------- | :--- | :------- |  :---------- |
-| tableData    | `object` | true | Main table data |
-| headData    | `object` | true | header styling props |
-| displayLegend    | `function` | true | outputs custom displays for td |
-| handleRowOnClick    | `function` | true | onClick on the row |
-| onClickPageChange    | `function` | true | onClick on the page change |
-| page    | `integer/string` | true | current page number |
-| page_count    | `integer/string` | true | total number of pages |
-| total_count    | `integer/string` | true | total number of object types |
-| className    | `string` | false   | className of input |
-| topBarComponent | `component` | false | component renders above th, receives "selection" from Table|
-| filterData    | `object` | false | filter form data |
-| filters    | `object` | false | previous filter  |
-| onFilter | `function` | false | function receives filter form values and can fire a new request |
-| filterColumnLimit | `interger` | false | number of filter form columns |
-| filterCSS | `string` | false | custom css for the filter form|
-| title | `string` | false | name of the entry type |
+| Property          | Type             | Required | Description                                                     |
+| :-------          | :---             | :------- | :----------                                                     |
+| tableData         | `object`         | true     | Main table data                                                 |
+| headData          | `object`         | true     | header styling props                                            |
+| displayLegend     | `function`       | true     | outputs custom displays for td                                  |
+| handleRowOnClick  | `function`       | true     | onClick on the row                                              |
+| onClickPageChange | `function`       | true     | onClick on the page change                                      |
+| page              | `integer/string` | true     | current page number                                             |
+| page_count        | `integer/string` | true     | total number of pages                                           |
+| total_count       | `integer/string` | true     | total number of object types                                    |
+| className         | `string`         | false    | className of input                                              |
+| topBarComponent   | `component`      | false    | component renders above th, receives "selection" from Table     |
+| filterData        | `object`         | false    | filter form data                                                |
+| filters           | `object`         | false    | previous filter                                                 |
+| onFilter          | `function`       | false    | function receives filter form values and can fire a new request |
+| filterColumnLimit | `interger`       | false    | number of filter form columns                                   |
+| filterCSS         | `string`         | false    | custom css for the filter form                                  |
+| title             | `string`         | false    | name of the entry type                                          |

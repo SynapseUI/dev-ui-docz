@@ -7409,8 +7409,8 @@ swap-case@^1.1.0:
     upper-case "^1.1.1"
 
 synapsefi-dev-ui@^1.0.173:
-  version "1.0.173"
-  resolved "https://registry.yarnpkg.com/synapsefi-dev-ui/-/synapsefi-dev-ui-1.0.173.tgz#1a847f5022bdc7375a3026b5431a57ac80ba19c1"
+  version "1.0.175"
+  resolved "https://registry.yarnpkg.com/synapsefi-dev-ui/-/synapsefi-dev-ui-1.0.175.tgz#390c126d43ef4aca1b3228b1530e5d9373497a86"
   dependencies:
     babel-plugin-styled-components "^1.10.0"
     babel-polyfill "^6.26.0"
