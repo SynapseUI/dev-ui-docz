@@ -1,0 +1,56 @@
+---
+name: RadioGroup
+route: /radioGroup
+---
+
+# RadioGroup
+
+import { Playground, PropsTable } from 'docz'
+import { RadioGroup } from 'synapsefi-dev-ui';
+import RadioGroupContainer from './RadioGroup.state';
+
+## Basic
+<RadioGroupContainer />
+
+```jsx
+  <RadioGroup
+    value={this.state.product}
+    propName="products"
+    onChange={(e, value) => this.setState({ product: value })}
+    width="300px"
+    options={[
+      { key: 'DEPOSIT-US', text: 'Deposit Product' },
+      { key: 'CARD-US', text: 'Card Issusance' },
+      { key: 'panda', text: 'Panda' },
+    ]}
+  />
+```
+
+## Classic Style
+<RadioGroupContainer selectionType="classic" />
+
+```jsx
+  <RadioGroup
+    selectionType="classic"
+    value={this.state.product}
+    propName="products"
+    onChange={(e, value) => this.setState({ product: value })}
+    options={[
+      { key: 'DEPOSIT-US', text: 'Deposit Product' },
+      { key: 'CARD-US', text: 'Card Issusance' },
+      { key: 'panda', text: 'Panda' },
+    ]}
+  />
+```
+
+## Props
+
+| Property | Type | Required | Description |
+| :------- | :--- | :------- |  :---------- |
+| value    | `string`/`array` | true | Value of the radio group |
+| propName    | `string` | false   | Property name |
+| className    | `string` | false   | className of radio group |
+| label    | `string` | false   | Label of radio group |
+| onChange | `function` | true | Function fired when radio group's `onChange` event triggers. Arguments: (e, value, propName).|
+| selectionType    | `string` | false  | If equals to `classic` then radio group changes style |
+| width    | `string` | false  | The width of each radio button |

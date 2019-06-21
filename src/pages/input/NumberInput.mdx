@@ -1,0 +1,58 @@
+---
+name: NumberInput
+route: /numberInput
+menu: Input
+---
+
+# NumberInput
+
+import { Playground, PropsTable } from 'docz'
+import { Input } from 'synapsefi-dev-ui';
+import FlexAlign from '../../common/FlexAlign';
+import NumberInputContainer from './NumberInput.state';
+
+## Basic
+<NumberInputContainer />
+
+```jsx
+  <NumberInput
+    className="custom-number-input"
+    propName="phoneNumber"
+    value={this.state.phoneNumber}
+    onChange={this.updateField}
+    label="Phone Number"
+    type="phone"
+    error="I Am Error"
+  />
+
+  <NumberInput
+    propName="amount"
+    value={this.state.amount}
+    onChange={this.updateField}
+    label="Amount"
+    type="currency"
+  />
+
+  <NumberInput
+    propName="date"
+    value={this.state.date}
+    onChange={this.updateField}
+    label="Date"
+    type="date"
+  />
+```
+
+## Props
+
+| Property | Type | Required | Description |
+| :------- | :--- | :------- |  :---------- |
+| value    | `string`/`array` | true | Value of the Input |
+| propName    | `string` | false   | Property name |
+| className    | `string` | false   | className of input |
+| label    | `string` | false   | Label of input |
+| onChange | `function` | false | Function fired when input's `onChange` event triggers. Arguments: (e, value, propName).|
+| onFocus | `function` | false | Function fired when input's `onFocus` event triggers.|
+| placeholder    | `string` | false  | Placeholder of input |
+| disabled    | `boolean` | false  | Disabled of input |
+| type    | `string` | false  | `phone`, `date`, or `currency` changes the formating |
+| format    | `string` | false  | Formats the input i.e. format="(###) ###-####" |

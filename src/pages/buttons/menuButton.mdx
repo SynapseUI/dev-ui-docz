@@ -12,19 +12,28 @@ import FlexAlign from '../../common/FlexAlign';
 
 ## Basic
 
-<Playground>
-  <FlexAlign style={{ justifyContent: 'flex-end' }}>
-    <MenuButtons
-      data={
-        [
-          { text: 'This will cause an Alert', onClick: () => alert('Test') },
-          { text: 'This will cause a Console.log', onClick: () => console.log('Test') },
-        ]
-      }
-    />
-    
-  </FlexAlign>
-</Playground>
+<FlexAlign style={{ justifyContent: 'flex-end' }}>
+  <MenuButtons
+    data={
+      [
+        { text: 'This will cause an Alert', onClick: () => alert('Test') },
+        { text: 'This will cause a Console.log', onClick: () => console.log('Test') },
+      ]
+    }
+  />
+  
+</FlexAlign>
+
+```jsx
+<MenuButtons
+  data={
+    [
+      { text: 'This will cause an Alert', onClick: () => alert('Test') },
+      { text: 'This will cause a Console.log', onClick: () => console.log('Test') },
+    ]
+  }
+/>
+```
 
 ## Props
 
