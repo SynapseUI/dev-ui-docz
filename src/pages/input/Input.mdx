@@ -1,6 +1,7 @@
 ---
 name: Input
-route: /input
+route: /regularInput
+menu: Input
 ---
 
 # Input
@@ -31,7 +32,7 @@ import InputContainer from './Input.state';
 | propName    | `string` | false   | Property name |
 | className    | `string` | false   | className of input |
 | label    | `string` | false   | Label of input |
-| onChange | `function` | true | Function fired when input's `onChange` event triggers. Arguments: (e, value, propName).|
-| onFocus | `function` | true | Function fired when input's `onFocus` event triggers.|
+| onChange | `function` | false | Function fired when input's `onChange` event triggers. Arguments: (e, value, propName).|
+| onFocus | `function` | false | Function fired when input's `onFocus` event triggers.|
 | placeholder    | `string` | false  | Placeholder of input |
 | disabled    | `boolean` | false  | Disabled of input |
