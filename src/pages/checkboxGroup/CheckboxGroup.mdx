@@ -1,0 +1,56 @@
+---
+name: CheckboxGroup
+route: /checkboxGroup
+---
+
+# CheckboxGroup
+
+import { Playground, PropsTable } from 'docz'
+import { CheckboxGroup } from 'synapsefi-dev-ui';
+import CheckboxGroupContainer from './CheckboxGroup.state';
+
+## Basic
+<CheckboxGroupContainer />
+
+```jsx
+  <CheckboxGroup
+    value={this.state.product}
+    propName="products"
+    onChange={(e, value) => this.setState({ product: value })}
+    width="300px"
+    options={[
+      { key: 'DEPOSIT-US', text: 'Deposit Product' },
+      { key: 'CARD-US', text: 'Card Issusance' },
+      { key: 'panda', text: 'Panda' },
+    ]}
+  />
+```
+
+## Classic Style
+<CheckboxGroupContainer selectionType="classic" />
+
+```jsx
+  <CheckboxGroup
+    selectionType="classic"
+    value={this.state.product}
+    propName="products"
+    onChange={(e, value) => this.setState({ product: value })}
+    options={[
+      { key: 'DEPOSIT-US', text: 'Deposit Product' },
+      { key: 'CARD-US', text: 'Card Issusance' },
+      { key: 'panda', text: 'Panda' },
+    ]}
+  />
+```
+
+## Props
+
+| Property | Type | Required | Description |
+| :------- | :--- | :------- |  :---------- |
+| value    | `string`/`array` | true | Value of the checkbox group |
+| propName    | `string` | false   | Property name |
+| className    | `string` | false   | className of checkbox group |
+| label    | `string` | false   | Label of checkbox group |
+| onChange | `function` | true | Function fired when checkbox group's `onChange` event triggers. Arguments: (e, value, propName).|
+| selectionType    | `string` | false  | If equals to `classic` then checkbox group changes style |
+| width    | `string` | false  | The width of each checkbox |
