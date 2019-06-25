@@ -1,0 +1,32 @@
+---
+name: FloatingActionButton
+route: /floatingActionButton
+---
+
+# FloatingActionButton
+
+import { PropsTable } from 'docz'
+import FABContainer from './FABContainer.state';
+
+## Basic
+<FABContainer />
+
+```jsx
+  <FloatingActionButton
+    hoverText="Example Floating action button"
+    panelHeader="Example Floating action button"
+    panelContent={/** some component */}
+
+    data={floatingActionButtonData}
+  />
+```
+
+## Props
+
+| Property | Type | Required | Description |
+| :------- | :--- | :------- |  :---------- |
+| isPanelOpen    | `bool` | true | Defines when the modal is visible |
+| onPanelClose    | `function` | true | Function that hides the panel |
+| className    | `string` | false   | className of Panel |
+| headerText    | `string` | false   | Header Text |
+| children    | `componet`/`DOMelement` | false   | Children componets |
