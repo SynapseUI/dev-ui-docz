@@ -1,0 +1,37 @@
+---
+name: FormSubHeader
+route: /formsubheader
+menu: Tooltip
+---
+
+# Tooltip
+
+import { PropsTable } from 'docz'
+import { FormSubHeader } from 'synapsefi-dev-ui'
+// import PanelContainer from './PanelContainer.state';
+
+## Basic
+<FormSubHeader
+  text="Some text here"
+  underline
+  tooltip="Tooltip Message"
+  textCase="none"
+/>
+
+```jsx
+  <FormSubHeader
+    text="Some text here"
+    underline
+    tooltip="Tooltip Message"
+    textCase="none"
+  />
+```
+
+## Props
+
+| Property  | Type     | Required | Description                                                                                |
+| :-------  | :---     | :------- | :----------                                                                                |
+| text      | `string` | true     | Main text                                                                                  |
+| underline | `bool`   | false    | Defines if the subheader should have an underline                                          |
+| tooltip   | `string` | false    | If not empty will create a tooltip on the right                                            |
+| textCase  | `string` | false    | `text-transform` value for the main text, can be `uppercase`, `lowercase`, or `capitalize` |

@@ -1,0 +1,39 @@
+---
+name: TooltipMessage
+route: /tooltipmessage
+menu: Tooltip
+---
+
+# TooltipMessage
+
+import { PropsTable } from 'docz'
+import { TooltipMessage } from 'synapsefi-dev-ui'
+import TooltipMessageContainer from './TooltipMessageContainer.state';
+
+## Basic
+
+<TooltipMessageContainer />
+
+```jsx
+  const RelativeContainer = styled.div`
+    position: relative;
+
+    &:hover {
+      .syn-dev-ui-tooltip-message {
+        display: flex;
+        top: -6px;
+        left: 6rem;
+      }
+    }
+  `;
+
+  <RelativeContainer>
+    <TooltipMessage>{"Tooltip message would go here"}</TooltipMessage>
+  </RelativeContainer>
+```
+
+## Props
+
+| Property | Type                    | Required | Description        |
+| :------- | :---                    | :------- | :----------        |
+| children | `componet`/`DOMelement` | true     | Children componets |
