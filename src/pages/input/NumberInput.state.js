@@ -1,6 +1,5 @@
 import React from 'react';
 import { NumberInput } from 'synapsefi-dev-ui';
-import FlexAlign from '../../common/FlexAlign';
 
 class NumberInputContainer extends React.Component {
   constructor(props) {
