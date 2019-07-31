@@ -5,8 +5,10 @@
     "docz:build": "docz build"
   },
   "devDependencies": {
-    "docz": "^1.2.0",
-    "docz-theme-default": "^1.2.0"
+    "docz": "^2.0.0-rc.1",
+    "docz-theme-default": "^1.2.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
   },
   "dependencies": {
     "react-animate-height": "^2.0.7",
