@@ -13,14 +13,13 @@ import Icons from './Icons.state';
 
 import { SvgIcons } from 'synapsefi-dev-ui';
 
-<SvgIcons.briefcase height="30px" width="30px"/>
+<SvgIcons.briefcase />
 
 ```
 ## Props
 
-| Property    | Type             | Required | Description |
-| :-------    | :---             | :------- | :---------- |
-| height      | `string`         | true     | Value of the Input |
-| width       | `string`         | true     | Value of the Input |
-| className   | `string`         | true     | Value of the Input |
-| fillcolor   | `string`         | true     | Value of the Input |
+| Property       | Type             | Required | Description |
+| :-------       | :---             | :------- | :---------- |
+| size           | `string`         | false    | size contains both height and width of icon|
+| className      | `string`         | false    | className of icon |
+| fill/fillColor | `string`         | false    | color value for icon. Note: if fillColor doesn't work, use fill instead |

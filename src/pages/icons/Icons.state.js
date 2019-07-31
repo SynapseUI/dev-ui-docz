@@ -23,7 +23,7 @@ const IconName = styled.div`
   display: flex;
   justify-content: center;
   align-content: center;
-  font-size: 17px;
+  font-size: 15px;
   padding: 18px;
   font-weight: 700;
 `;
@@ -32,7 +32,7 @@ const IconKey = styled.p`
   display: flex;
   justify-content: center;
   align-content: center;
-  font-size: 10.5px;
+  font-size: 10px;
 `;
 
 class Icons extends React.Component{
@@ -45,7 +45,7 @@ class Icons extends React.Component{
           return(
             <IconsContainer>
               <IconName>{combineIconWords}</IconName>
-              <IconWrapper>{SvgIcons[iconKey]({size: 35})}</IconWrapper>
+              <IconWrapper>{SvgIcons[iconKey]({size: 32})}</IconWrapper>
               <IconKey>{iconKey}</IconKey>
             </IconsContainer>
           )
