@@ -1,0 +1,25 @@
+---
+name: Icons
+route: /Icons
+---
+
+# Icons
+
+import Icons from './Icons.state';
+
+<Icons />
+
+```jsx
+
+import { SvgIcons } from 'synapsefi-dev-ui';
+
+<SvgIcons.briefcase />
+
+```
+## Props
+
+| Property       | Type             | Required | Description |
+| :-------       | :---             | :------- | :---------- |
+| size           | `string`         | false    | size contains both height and width of icon|
+| className      | `string`         | false    | className of icon |
+| fill/fillColor | `string`         | false    | color value for icon. Note: if fillColor doesn't work, use fill instead |
