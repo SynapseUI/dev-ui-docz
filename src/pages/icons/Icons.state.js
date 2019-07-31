@@ -33,7 +33,6 @@ const IconKey = styled.p`
   justify-content: center;
   align-content: center;
   font-size: 10.5px;
-  margin-top: 0.80px;
 `;
 
 class Icons extends React.Component{
