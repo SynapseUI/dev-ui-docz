@@ -9,39 +9,49 @@ const IconsList = styled.div`
   width: 100%;
 `;
 
-const IconsDiv = styled.div`
+const IconsContainer = styled.div`
   padding: 35px;
 `;
 
-const AllIcons = styled.div`
+const IconWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-content: center;
 `;
 
-const IconNames = styled.div`
+const IconName = styled.div`
   display: flex;
   justify-content: center;
   align-content: center;
-  font-size: 13px;
+  font-size: 17px;
+  padding: 18px;
+  font-weight: 700;
+`;
+
+const IconKey = styled.p`
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  font-size: 10.5px;
+  margin-top: 0.80px;
 `;
 
 class Icons extends React.Component{
-    render(){
+  render(){
     return(
-    <div>
       <IconsList>
-        {Object.keys(SvgIcons).map(icons => { 
-          let IconsArray = icons.split('_');
-          let allIconNames = IconsArray.map(name => name.charAt(0).toUpperCase() + name.substring(1) + ' ')
-          return (
-          <IconsDiv>
-            <AllIcons>	{SvgIcons[icons]({size: 30})}</AllIcons>
-            <IconNames>{allIconNames}</IconNames>
-          </IconsDiv>)
-          })}
+        {Object.keys(SvgIcons).map(iconKey => {
+          const iconsKeyWords = iconKey.split('_');
+          const combineIconWords = iconsKeyWords.map(word => word.charAt(0).toUpperCase() + word.substring(1) + ' ')
+          return(
+            <IconsContainer>
+              <IconName>{combineIconWords}</IconName>
+              <IconWrapper>{SvgIcons[iconKey]({size: 35})}</IconWrapper>
+              <IconKey>{iconKey}</IconKey>
+            </IconsContainer>
+          )
+        })}
       </IconsList>
-    </div>
     )
   }
 }
