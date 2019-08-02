@@ -1,25 +1,43 @@
 ---
-name: Input
-route: /regularInput
+name: NumberInput
+route: /numberInput
 menu: Input
 ---
 
-# Input
+# NumberInput
 
 import { Input } from 'synapsefi-dev-ui';
 import FlexAlign from '../../common/FlexAlign';
-import InputContainer from './Input.state';
+import NumberInputContainer from './NumberInput.state';
 
 ## Basic
-<InputContainer />
+<NumberInputContainer />
 
 ```jsx
-  <Input
-    value={this.state.input}
-    propName='input'
-    onChange={(e, value, field) => this.setState({ input: value })}
-    placeholder="Simple Input"
-    style={{ width: "300px" }}
+  <NumberInput
+    className="custom-number-input"
+    propName="phoneNumber"
+    value={this.state.phoneNumber}
+    onChange={this.updateField}
+    label="Phone Number"
+    type="phone"
+    error="I Am Error"
+  />
+
+  <NumberInput
+    propName="amount"
+    value={this.state.amount}
+    onChange={this.updateField}
+    label="Amount"
+    type="currency"
+  />
+
+  <NumberInput
+    propName="date"
+    value={this.state.date}
+    onChange={this.updateField}
+    label="Date"
+    type="date"
   />
 ```
 
@@ -35,3 +53,5 @@ import InputContainer from './Input.state';
 | onFocus     | `function`       | false    | Function fired when input's `onFocus` event triggers.|
 | placeholder | `string`         | false    | Placeholder of input |
 | disabled    | `boolean`        | false    | Disabled of input |
+| type        | `string`         | false    | `phone`, `date`, or `currency` changes the formating |
+| format      | `string`         | false    | Formats the input i.e. format="(###) ###-####" |

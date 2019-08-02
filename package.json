@@ -6,7 +6,9 @@
   },
   "devDependencies": {
     "docz": "^1.2.0",
-    "docz-theme-default": "^1.2.0"
+    "docz-theme-default": "^1.2.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
   },
   "dependencies": {
     "react-animate-height": "^2.0.7",

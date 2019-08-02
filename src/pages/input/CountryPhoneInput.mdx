@@ -1,26 +1,41 @@
 ---
-name: Input
-route: /regularInput
+name: CountryPhoneInput
+route: /countryPhoneInput
 menu: Input
 ---
 
-# Input
+# CountryPhoneInput
 
-import { Input } from 'synapsefi-dev-ui';
-import FlexAlign from '../../common/FlexAlign';
-import InputContainer from './Input.state';
+
+import { CountryPhoneInput } from 'synapsefi-dev-ui';
+import CountryPhoneInputContainer from './CountryPhoneInput.state';
 
 ## Basic
-<InputContainer />
+<CountryPhoneInputContainer />
 
 ```jsx
-  <Input
-    value={this.state.input}
-    propName='input'
-    onChange={(e, value, field) => this.setState({ input: value })}
-    placeholder="Simple Input"
-    style={{ width: "300px" }}
+  <CountryPhoneInput
+    value={this.state.countryPhoneNumber}
+    propName="countryPhoneNumber"
+    onChange={(e, value) => this.setState({ countryPhoneNumber: value })}
+    options={[
+      { key: 'USA', text: 'USA' },
+      { key: 'GBR', text: 'GBR' },
+      { key: 'CAN', text: 'CAN' },
+    ]}
+    getCallingCode={getCountryNumber}
   />
+
+  // getCountryNumber function
+  const getCountryNumber = code => {
+    const list = {
+      USA: 1,
+      GBR: 44,
+      CAN: 1,
+    };
+
+    return list[code] || 1;
+  };
 ```
 
 ## Props
