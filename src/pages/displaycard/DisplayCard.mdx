@@ -1,0 +1,36 @@
+---
+name: Display Card
+route: /displaycard
+---
+
+# Display Card
+
+
+import PanelContainer from './DisplayCard.state';
+
+## Basic
+<PanelContainer />
+
+```jsx
+  <Panel
+    title="Panel isOpen value is outside the component"
+    isPanelOpen={this.state.panelIsOpen}
+    onPanelClose={() => this.setState({ panelIsOpen: false })}
+  >
+    <p>Useful if you need to open without a button, i.e. componentDidMount</p>
+  </Panel>
+
+  <Button secondary small onClick={() => this.setState({ panelIsOpen: true })}>
+    Open Panel
+  </Button>
+```
+
+## Props
+
+| Property     | Type                    | Required | Description                       |
+| :-------     | :---                    | :------- | :----------                       |
+| isPanelOpen  | `bool`                  | true     | Defines when the modal is visible |
+| onPanelClose | `function`              | true     | Function that hides the panel     |
+| className    | `string`                | false    | className of Panel                |
+| headerText   | `string`                | false    | Header Text                       |
+| children     | `componet`/`DOMelement` | false    | Children componets                |
