@@ -1,33 +1,74 @@
 import React from 'react';
+import styled from 'styled-components';
 
 import { Panel, Button } from 'synapsefi-dev-ui';
 
-class PanelContainer extends React.Component {
-  constructor(props) {
-    super(props);
+import { DisplayCard, MenuButtons } from 'synapsefi-dev-ui';
 
-    this.state = { panelIsOpen: false }
-  }
+const GridWrapper = styled.div`
+  display: grid;
+  grid-gap: 16px;
+  grid-template-columns: repeat(3, 300px);
+  grid-auto-rows: 200px;
+  grid-auto-columns: 200px;
 
-  render() {
-    const { panelIsOpen } = this.state;
+  /* margin-bottom: 100px; */
+`;
 
+  const DisplayCardContainer = () => {
     return (
-      <React.Fragment>
-        <Panel
-          title="Panel isOpen value is outside the component"
-          isPanelOpen={panelIsOpen}
-          onPanelClose={() => this.setState({ panelIsOpen: false })}
-        >
-          <p>Useful if you need to open without a button, i.e. componentDidMount</p>
-        </Panel>
-
-        <Button secondary small onClick={() => this.setState({ panelIsOpen: true })}>
-          Open Panel
-        </Button>
-      </React.Fragment>
+      <GridWrapper>
+        {/* <Header text="Normal Case" /> */}
+        <DisplayCard 
+          title="Regular Title"
+          data={
+            [
+              { label: 'Account Name', value: 1234567890 },
+              { label: 'Current Balance', value: '$4.50' },
+            ]
+          }
+          tooltip="Collateral account used for chargebacks and unathorized returns."
+          buttonComponent={(
+            <MenuButtons
+              data={
+                [
+                  { text: 'test click', onClick: () => console.log('test click') },
+                  { text: 'test click 2', onClick: () => console.log('test click 2') },
+                ]
+              }
+            />
+          )}
+        />
+        {/* <Header text="Active Case" /> */}
+        <DisplayCard
+          title="Regular Title"
+          isActive
+          data={
+            [
+              { label: 'Account Name', value: 1234567890 },
+              { label: 'Current Balance', value: '$4.50' },
+            ]
+          }
+        />
+        <DisplayCard
+          title="Regular Title someverylong title i guess"
+          isActive
+          innerButtonData={{
+            text: "+ Create New Account",
+            onClick: () => console.log('creating new account')
+          }}
+          buttonComponent={(
+            <MenuButtons
+              data={
+                [
+                  { text: 'test click', onClick: () => console.log('test click') },
+                  { text: 'test click 2', onClick: () => console.log('test click 2') },
+                ]
+              }
+            />
+          )}
+        />
+      </GridWrapper>
     )
-  }
 }
-
-export default PanelContainer;
+export default DisplayCardContainer;
