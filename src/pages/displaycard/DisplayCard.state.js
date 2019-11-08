@@ -1,8 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { Panel, Button } from 'synapsefi-dev-ui';
-
 import { DisplayCard, MenuButtons } from 'synapsefi-dev-ui';
 
 const GridWrapper = styled.div`
@@ -11,8 +9,6 @@ const GridWrapper = styled.div`
   grid-template-columns: repeat(3, 300px);
   grid-auto-rows: 200px;
   grid-auto-columns: 200px;
-
-  /* margin-bottom: 100px; */
 `;
 
   const DisplayCardContainer = () => {

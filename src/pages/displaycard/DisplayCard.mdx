@@ -9,6 +9,7 @@ route: /displaycard
 import DisplayCardContainer from './DisplayCard.state';
 
 ## Basic
+
 <DisplayCardContainer/>
 
 
@@ -65,10 +66,20 @@ import DisplayCardContainer from './DisplayCard.state';
 
 ## Props
 
-| Property     | Type                    | Required | Description                       |
-| :-------     | :---                    | :------- | :----------                       |
-| isPanelOpen  | `bool`                  | true     | Defines when the modal is visible |
-| onPanelClose | `function`              | true     | Function that hides the panel     |
-| className    | `string`                | false    | className of Panel                |
-| headerText   | `string`                | false    | Header Text                       |
-| children     | `componet`/`DOMelement` | false    | Children componets                |
+| Property                | Type                    | Required  | Description                                 |
+| :-------                | :---                    | :-------  | :----------                                 |
+| isActive                | `bool`                  | false     | Green border appears if active              |
+| title                   | `string`                | false     | Defines title of the card                   |
+| buttonComponent         | `component`             | false     | The three dot button right of the title     |
+| innerButtonData         | `object`                | false     | Inner block button, data has to be empty    |
+| innerButtonData.text    | `string`                | false     | Button right of the title                   |
+| innerButtonData.onClick | `function`              | false     | Button right of the title                   |
+| data                    | `objects`               | false     | label, value, isEllipsis list               |
+| label                   | `string`                | false     | Defines label for the account name          |
+| value                   | `string`                | false     | Defines value for the account name                                       |
+| children                | `htmlelement`           | false     | Html element nested in the component. Not recommended with innerButtonData or data.                |
+| isEllipsis              | `bool`                  | false     | Determines if value will have css ellispse properties |
+| tooltip                 | `string`                | false     | Will render the Tooltip component            |
+| isDisabled              | `bool`                  | false     | Disables the button Component                |
+| className               | `string`                | false     | Class Name for css customization             |
+
