@@ -1,0 +1,41 @@
+---
+name: Dropdowns
+route: /dropdown
+menu: Dropdown
+---
+
+# Dropdown
+
+import { Dropdown } from 'synapsefi-dev-ui';
+import FlexAlign from '../../common/FlexAlign';
+import DropdownContainer from './DropdownContainer.state';
+
+## Basic
+<DropdownContainer />
+
+```jsx
+<Dropdown
+  value=""
+  width="300px"
+  placeholder="Select a Pet"
+  options={
+    [
+      { key: 'cat', text: 'Cat' },
+      { key: 'dog', text: 'Dog' },
+      { key: 'mouse', text: 'Mouse' },
+    ]
+  }
+/>
+```
+
+
+## Props
+
+| Property    | Type             | Required | Description                                      |
+| :-------    | :---             | :------- | :----------                                      |
+| value       | `string`/`array` | true     | Value of the Dropddown                           |
+| options     | `array`          | true     | Menu options, must have `key` and `text` value   |
+| multiselect | `boolean`        | false    | Multiselect values, must set `value` to an array |
+| searchable  | `boolean`        | false    | Allows searchable options                        |
+| className   | `string`         | false    | Custome classname                                |
+| width       | `string`         | false    | Width of the bar and menu, i.e. `width: 100px`   |
