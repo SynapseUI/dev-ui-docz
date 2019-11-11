@@ -54,7 +54,7 @@ import {
   truncateFileName, 
   checkMaxFile, 
   renderPageLevelAlert 
-} from 'synapsefi-dev-ui'
+} from 'synapsefi-dev-ui/dist/components/FileUpload/util'
 
 import {
   fileUploadData,
