@@ -1,60 +1,10 @@
-
-
-
-
-//   const FileUploadContainer = () => {
-//     return (
-//       <div>
-//         hi
-//         <FileUpload 
-//           acceptedFiles={
-//             [ "png", "jpg", "jpeg", "pdf"]
-//           }
-//           files={{
-//             name: 'https://cdn.synapsepay.com/uploads/2019/10/02/3BmuL7ytDEjFrQkhn9cOxY01GSXTU5wCoHA8z4aMiJsN6l2RWq.png'
-//           }}
-//           fileUploadData={[]}
-//           fileValues={{
-//             'bd58154cd50dab5064b577e470f52474f0b57aa2aa33ed18d616f551b307ee03': {
-//               'subDocumentId': 'bd58154cd50dab5064b577e470f52474f0b57aa2aa33ed18d616f551b307ee03',
-//               'documentValue': 'https://cdn.synapsepay.com/uploads/2019/10/02/3BmuL7ytDEjFrQkhn9cOxY01GSXTU5wCoHA8z4aMiJsN6l2RWq.png'
-//             }
-//           }}
-//           // customText={customText}
-//           // isDisabled={true}
-//           deleteAction={() => {console.log('Delete Action')}}
-//           error={false}
-//           key={1}
-//           idx={1}
-//           fileUploadRowText={`${0 + 1}. ${"Social Security Card"}`}
-//           modalHeaderText={"Delete Document"} ////
-//           modalChildren={() => {console.log('modal children')}} ////
-//           modalButtons={() => {console.log('modal buttons')}} ////
-//           maxFileNameLength={16} 
-//           updateCheckedFiles={() => {console.log('update checked files')}} //
-//           updateFileState={() => {console.log('update files state')}} //
-//           isLoading={false}
-//           isMulti={true}
-//           fileUploadData={[]}
-//           onDrop={() => {console.log('onDrop')}}
-//         />
-//       </div>
-//     )
-// }
-// export default FileUploadContainer;
-
-
-
-
 import React, { Component } from 'react';
 
-import { 
-  FileUpload,
-  CheckboxGroup, 
-  truncateFileName, 
-  checkMaxFile, 
-  renderPageLevelAlert 
-} from 'synapsefi-dev-ui/dist/components/FileUpload/util'
+import FileUpload from 'synapsefi-dev-ui/dist/components/FileUpload/FileUpload'
+import CheckboxGroup from 'synapsefi-dev-ui/dist/components/CheckboxGroup/CheckboxGroup'
+import renderPageLevelAlert from 'synapsefi-dev-ui/dist/components/RenderPageLevelAlert/renderPageLevelAlert'
+
+import { truncateFileName, checkMaxFile } from 'synapsefi-dev-ui/dist/components/FileUpload/util'
 
 import {
   fileUploadData,
@@ -152,6 +102,7 @@ class FileUploadContainer extends Component {
   // wont render without it
   modalChildren = (props) => {
     const options = _.map(props.fileValues, (file, key) => {
+      console.log(file.documentValue)
       return {
         key: file.documentValue,
         text: truncateFileName(file.documentValue, 16)
@@ -229,6 +180,7 @@ class FileUploadContainer extends Component {
     const { document, idx, key } = this.props;
     const { allowedFileTypes, commonName, error } = document;
     const { files, fileValues, isLoading } = this.state;
+    // console.log('')
 
     return (
       <FileUpload
@@ -240,7 +192,7 @@ class FileUploadContainer extends Component {
         // isDisabled={true}
         deleteAction={() => {console.log('hi')}}
         error={error}
-        key={key}
+        // key={key}
         idx={idx}
         fileUploadRowText={`${idx + 1}. ${commonName}`}////
         modalHeaderText={"Delete Document"} ////
