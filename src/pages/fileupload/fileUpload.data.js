@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import Colors from 'synapsefi-dev-ui';
+import Colors from 'synapsefi-dev-ui/dist/colors';
 
 export let intialState = {
   files: [

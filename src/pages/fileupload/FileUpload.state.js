@@ -19,6 +19,9 @@ class FileUpload extends Component {
   render() {
     return (
       <Container>
+        <div>
+          1
+        </div>
         {
           // all the 1 - 4 starting with proof of account
           _.map(requiredDocuments, (document, idx) => {

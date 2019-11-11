@@ -4,8 +4,8 @@ import FileUpload from 'synapsefi-dev-ui/dist/components/FileUpload/FileUpload'
 import CheckboxGroup from 'synapsefi-dev-ui/dist/components/CheckboxGroup/CheckboxGroup'
 import renderPageLevelAlert from 'synapsefi-dev-ui/dist/components/RenderPageLevelAlert/renderPageLevelAlert'
 
-import { truncateFileName, checkMaxFile } from 'synapsefi-dev-ui/dist/components/FileUpload/util'
-
+import { truncateFileName, checkMaxFile } from 'synapsefi-dev-ui/dist/components/FileUpload/util/index'
+console.log("tfN", truncateFileName)
 import {
   fileUploadData,
   fileValues,
@@ -101,11 +101,13 @@ class FileUploadContainer extends Component {
 
   // wont render without it
   modalChildren = (props) => {
+    console.log("mChildren",props)
+
     const options = _.map(props.fileValues, (file, key) => {
       console.log(file.documentValue)
       return {
         key: file.documentValue,
-        text: truncateFileName(file.documentValue, 16)
+        text: file.documentValue
       };
     });
 
@@ -180,7 +182,12 @@ class FileUploadContainer extends Component {
     const { document, idx, key } = this.props;
     const { allowedFileTypes, commonName, error } = document;
     const { files, fileValues, isLoading } = this.state;
-    // console.log('')
+
+    console.log(fileUploadData)
+    console.log(fileValues)
+    console.log(this.state, 'state')
+    console.log(this.props, 'props')
+    console.log(document, 'doc')
 
     return (
       <FileUpload
@@ -192,7 +199,7 @@ class FileUploadContainer extends Component {
         // isDisabled={true}
         deleteAction={() => {console.log('hi')}}
         error={error}
-        // key={key}
+        key={key}
         idx={idx}
         fileUploadRowText={`${idx + 1}. ${commonName}`}////
         modalHeaderText={"Delete Document"} ////
