@@ -5,7 +5,6 @@ import CheckboxGroup from 'synapsefi-dev-ui/dist/components/CheckboxGroup/Checkb
 import renderPageLevelAlert from 'synapsefi-dev-ui/dist/components/RenderPageLevelAlert/renderPageLevelAlert'
 
 import { truncateFileName, checkMaxFile } from 'synapsefi-dev-ui/dist/components/FileUpload/util/index'
-console.log("tfN", truncateFileName)
 import {
   fileUploadData,
   fileValues,
@@ -182,12 +181,6 @@ class FileUploadContainer extends Component {
     const { document, idx, key } = this.props;
     const { allowedFileTypes, commonName, error } = document;
     const { files, fileValues, isLoading } = this.state;
-
-    console.log(fileUploadData)
-    console.log(fileValues)
-    console.log(this.state, 'state')
-    console.log(this.props, 'props')
-    console.log(document, 'doc')
 
     return (
       <FileUpload
