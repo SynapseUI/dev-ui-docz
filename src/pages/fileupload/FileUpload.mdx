@@ -22,25 +22,17 @@ import FileUpload from './FileUpload.state';
   ]}
   files={[
     {
-      name: 'https://cdn.synapsepay.com/uploads/2019/10/02/3BmuL7ytDEjFrQkhn9cOxY01GSXTU5wCoHA8z4aMiJsN6l2RWq.png'
+      name: 'https://cdn.synapsepay.com/uploads/2019/10/02/3BmuL7.png'
     }
   ]}
-  fileUploadData={[]}
   fileValues={{
     'bd58154cd50dab5064b577e470f52474f0b57aa2aa33ed18d616f551b307ee03': {
       'subDocumentId': 'bd58154cd50dab5064b577e470f52474f0b57aa2aa33ed18d616f551b307ee03',
-      'documentValue': 'https://cdn.synapsepay.com/uploads/2019/10/02/3BmuL7ytDEjFrQkhn9cOxY01GSXTU5wCoHA8z4aMiJsN6l2RWq.png'
+      'documentValue': 'https://cdn.synapsepay.com/uploads/2019/10/02/3BmuL7.png'
     }
   }}
   deleteAction={() => console.log('Delete Action')}
-  error={false}
-  key={1}
-  idx={1}
   fileUploadRowText={'1. Proof of account'}
-  maxFileNameLength={16} 
-  isLoading={false}
-  isMulti={false}
-  fileUploadData={[]}
   modalHeaderText={"Delete Document"}
   modalChildren={() => (
       <CheckboxGroup
@@ -49,7 +41,7 @@ import FileUpload from './FileUpload.state';
         onChange={() => {console.log('Modal box checked')}}
         selectionType="classic"
         width="300px"
-        options={[{key: "https://cdn.synapsepay.com/uploads/2019/10/02/3BmuL7ytDEjFrQkhn9cOxY01GSXTU5wCoHA8z4aMiJsN6l2RWq.png", text: "2019/10/02/3B...png"}]}
+        options={[{key: "https://cdn.synapsepay.com/uploads/2019/10/02/3BmuL7.png", text: "2019/10/02/3B...png"}]}
       />
   )}
   modalButtons={() => (
@@ -80,11 +72,12 @@ import FileUpload from './FileUpload.state';
 | acceptedFiles           | `array `           | false     | An array of strings which determines the file type     |
 | isLoading               | `bool`             | false     | Determines the loading state of the component    |
 | isMulti                 | `bool`             | false     | Determines if the file upload component accepts more than one file at a time                   |
+| deleteAction            | `function`         | true      | A function which gets called when a trashcan icon is clicked                  |
 | files                   | `array`            | false     | An array of objects containing file details, mainly used to determine local state of the component                   |
 | fileValues              | `objects`          | false     | An object which contains a list of file values denoted by id, used to track reducer/api state. Should remain in sync with the local state               |
 | fileUploadRowText       | `string`           | false     | Displays the document details for each file upload row          |
 | maxFiles                | `number`           | false     | Number determining how many files a single file upload component can hold                                       |
-| onDrop                  | `function`         | true      | The function which gets called when a file is accepted, this function should update local state, and reducer state with newly accepted files.               |
+| onDrop                  | `function`         | true      | A function which gets called when a file is accepted, this function should update local state, and reducer state with newly accepted files.               |
 | updateModal             | `function`         | false     | A callback function used to toggle show states of the modal |
 | modalButtons            | `array`            | true      | An array of components which renders the action buttons when a modal is shown            |
 | modalHeaderText         | `string`           | false     | Text shown in the header section of the modal              |
