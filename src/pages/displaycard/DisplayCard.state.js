@@ -14,8 +14,7 @@ const GridWrapper = styled.div`
   const DisplayCardContainer = () => {
     return (
       <GridWrapper>
-        {/* <Header text="Normal Case" /> */}
-        <DisplayCard 
+         <DisplayCard 
           title="Regular Title"
           data={
             [
@@ -35,7 +34,6 @@ const GridWrapper = styled.div`
             />
           )}
         />
-        {/* <Header text="Active Case" /> */}
         <DisplayCard
           title="Regular Title"
           isActive
@@ -45,24 +43,6 @@ const GridWrapper = styled.div`
               { label: 'Current Balance', value: '$4.50' },
             ]
           }
-        />
-        <DisplayCard
-          title="Regular Title someverylong title i guess"
-          isActive
-          innerButtonData={{
-            text: "+ Create New Account",
-            onClick: () => console.log('creating new account')
-          }}
-          buttonComponent={(
-            <MenuButtons
-              data={
-                [
-                  { text: 'test click', onClick: () => console.log('test click') },
-                  { text: 'test click 2', onClick: () => console.log('test click 2') },
-                ]
-              }
-            />
-          )}
         />
       </GridWrapper>
     )
