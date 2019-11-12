@@ -1,16 +1,19 @@
 ---
 name: Display Card
 route: /displaycard
+
 ---
 
 # Display Card
 
 
 import DisplayCardContainer from './DisplayCard.state';
+import AbsentCardContainer from './AbsentCard.state'
 
 ## Basic
 
 <DisplayCardContainer/>
+
 
 ```jsx
 <DisplayCard 
@@ -23,18 +26,18 @@ import DisplayCardContainer from './DisplayCard.state';
   }
   tooltip="Collateral account used for chargebacks and unathorized returns."
   buttonComponent={(
-    <MenuButtons
-      data={
-        [
-          { text: 'test click', onClick: () => console.log('test click') },
-          { text: 'test click 2', onClick: () => console.log('test click 2') },
-        ]
-      }
-    />
+  <MenuButtons
+    data={
+      [
+        { text: 'test click', onClick: () => console.log('test click') },
+        { text: 'test click 2', onClick: () => console.log('test click 2') },
+      ]
+    }
+  />
   )}
 />
 <DisplayCard
-  title="Regular Title for DisplayCard"
+  title="Regular Title"
   isActive
   data={
     [
@@ -43,6 +46,14 @@ import DisplayCardContainer from './DisplayCard.state';
     ]
   }
 />
+```
+
+## Absent Data
+
+<AbsentCardContainer/>
+
+```jsx
+
 <DisplayCard
   title="Regular Title someverylong title i guess"
   isActive
@@ -61,6 +72,19 @@ import DisplayCardContainer from './DisplayCard.state';
     />
   )}
 />
+<DisplayCard
+  innerButtonData={{
+    text: "+ Create New Account",
+    onClick: () => console.log('creating new account')
+  }}
+/>
+<DisplayCard
+  title="Example with Children prop"
+>
+  <div>
+    You have not created or assigned a Loan Reserve Account
+  </div>
+</DisplayCard>
 ```
 
 ## Props
@@ -71,8 +95,8 @@ import DisplayCardContainer from './DisplayCard.state';
 | title                   | `string`                | false     | Defines title of the card                   |
 | buttonComponent         | `component`             | false     | The three dot button right of the title     |
 | innerButtonData         | `object`                | false     | Inner block button, data has to be empty    |
-| innerButtonData.text    | `string`                | false     | Button right of the title                   |
-| innerButtonData.onClick | `function`              | false     | Button right of the title                   |
+| innerButtonData.text    | `string`                | false     | The title represents information a user would like to include                   |
+| innerButtonData.onClick | `function`              | false     | A function which gets called after the title is clicked on                 |
 | data                    | `objects`               | false     | label, value, isEllipsis list               |
 | label                   | `string`                | false     | Defines label for the account name          |
 | value                   | `string`                | false     | Defines value for the account name                                       |
