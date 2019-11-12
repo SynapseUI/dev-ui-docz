@@ -1,5 +1,4 @@
-import React, { Component } from 'react';
-
+import React from 'react';
 import FileUpload from 'synapsefi-dev-ui/dist/components/FileUpload/FileUpload'
 import CheckboxGroup from 'synapsefi-dev-ui/dist/components/CheckboxGroup/CheckboxGroup'
 
