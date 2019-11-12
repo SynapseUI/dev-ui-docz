@@ -23,7 +23,7 @@ const FileUploadContainer = () => {
             'documentValue': 'https://cdn.synapsepay.com/uploads/2019/10/02/3BmuL7.png'
           }
         }}
-        deleteAction={() => console.log('Delete Action')}
+        deleteAction={() => alert('This is the deleteAction function, which would delete the file')}
         fileUploadRowText={'1. Proof of account'}
         modalHeaderText={"Delete Document"}
         modalChildren={() => (
@@ -51,7 +51,7 @@ const FileUploadContainer = () => {
               }
             ]
         )}
-        onDrop={() => console.log('Upload file')}
+        onDrop={() => alert('This is the onDrop function, which would be a function that updates the files')}
       />
   )
 }
