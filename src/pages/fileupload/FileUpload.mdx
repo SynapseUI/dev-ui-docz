@@ -20,20 +20,19 @@ test
 
 ## Props
 
-| Property                | Type                    | Required  | Description                                 |
-| :-------                | :---                    | :-------  | :----------                                 |
-| isActive                | `bool`                  | false     | Green border appears if active              |
-| title                   | `string`                | false     | Defines title of the card                   |
-| buttonComponent         | `component`             | false     | The three dot button right of the title     |
-| innerButtonData         | `object`                | false     | Inner block button, data has to be empty    |
-| innerButtonData.text    | `string`                | false     | Button right of the title                   |
-| innerButtonData.onClick | `function`              | false     | Button right of the title                   |
-| data                    | `objects`               | false     | label, value, isEllipsis list               |
-| label                   | `string`                | false     | Defines label for the account name          |
-| value                   | `string`                | false     | Defines value for the account name                                       |
-| children                | `htmlelement`           | false     | Html element nested in the component. Not recommended with innerButtonData or data.                |
-| isEllipsis              | `bool`                  | false     | Determines if value will have css ellispse properties |
-| tooltip                 | `string`                | false     | Will render the Tooltip component            |
-| isDisabled              | `bool`                  | false     | Disables the button Component                |
-| className               | `string`                | false     | Class Name for css customization             |
-
+| Property                | Type               | Required  | Description                                 |
+| :-------                | :---               | :-------  | :----------                                 |
+| allowModal              | `bool`             | false     | Determines whether the modal component should show             |
+| allowDelete             | `bool`             | false     | Determines whether the delete icon should show                  |
+| acceptedFiles           | `array `           | false     | An array of strings which determines the file type     |
+| isLoading               | `bool`             | false     | Determines the loading state of the component    |
+| isMulti                 | `bool`             | false     | Determines if the file upload component accepts more than one file at a time                   |
+| files                   | `array`            | false     | An array of objects containing file details, mainly used to determine local state of the component                   |
+| fileValues              | `objects`          | false     | An object which contains a list of file values denoted by id, used to track reducer/api state. Should remain in sync with the local state               |
+| fileUploadRowText       | `string`           | false     | Displays the document details for each file upload row          |
+| maxFiles                | `number`           | false     | Number determining how many files a single file upload component can hold                                       |
+| onDrop                  | `function`         | true      | The function which gets called when a file is accepted, this function should update local state, and reducer state with newly accepted files.               |
+| updateModal             | `function`         | false     | A callback function used to toggle show states of the modal |
+| modalButtons            | `array`            | true      | An array of components which renders the action buttons when a modal is shown            |
+| modalHeaderText         | `string`           | false     | Text shown in the header section of the modal              |
+| modalChildren           | `array`            | true      | An array of components which renders in the body of the modal            |

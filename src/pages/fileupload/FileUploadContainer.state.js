@@ -183,25 +183,25 @@ class FileUploadContainer extends Component {
 
     return (
       <FileUpload
-        acceptedFiles={allowedFileTypes} ////
-        files={files} ////
+        acceptedFiles={allowedFileTypes}
+        files={files}
         fileUploadData={fileUploadData}
-        fileValues={fileValues} /////
+        fileValues={fileValues}
         // customText={customText}
         // isDisabled={true}
         deleteAction={() => {console.log('hi')}}
         error={error}
         key={key}
         idx={idx}
-        fileUploadRowText={`${idx + 1}. ${commonName}`}////
-        modalHeaderText={"Delete Document"} ////
-        modalChildren={this.modalChildren} ////
-        modalButtons={this.modalButtons} ////
+        fileUploadRowText={`${idx + 1}. ${commonName}`}
+        modalHeaderText={"Delete Document"}
+        modalChildren={this.modalChildren}
+        modalButtons={this.modalButtons}
         maxFileNameLength={16} 
-        updateCheckedFiles={this.updateCheckedFiles} //
-        updateFileState={this.updateFileState} //
-        isLoading={isLoading} ////
-        isMulti={document.isMulti} ////
+        updateCheckedFiles={this.updateCheckedFiles}
+        updateFileState={this.updateFileState}
+        isLoading={isLoading}
+        isMulti={document.isMulti}
         fileUploadData={fileUploadData}
         onDrop={this.onDrop}
       >

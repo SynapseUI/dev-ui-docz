@@ -10,7 +10,6 @@ const Container = styled.div`
   border: 2px solid ${Colors.COOL_LIGHT};
   border-radius: 5px;
   padding: 20px 30px 150px;
-  margin-top: 60px;
   height: auto;
   width: auto;
 `;
