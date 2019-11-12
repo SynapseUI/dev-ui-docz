@@ -11,6 +11,24 @@ const GridWrapper = styled.div`
   grid-auto-columns: 200px;
 `;
 
+const ChildContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex-grow: 1;
+
+  font-family: Nunito Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 22px;
+
+  color: #999999;
+  background: #FDFDFD;
+  padding: 0 1rem;
+`;
+
   const AbsentCardContainer = () => {
     return (
       <GridWrapper>
@@ -36,8 +54,15 @@ const GridWrapper = styled.div`
           innerButtonData={{
             text: "+ Create New Account",
             onClick: () => console.log('creating new account')
-          }}
+          }}  
         />
+        <DisplayCard
+          title="Example with Children prop"
+        >
+          <ChildContainer>
+            You have not created or assigned a Loan Reserve Account
+          </ChildContainer>
+        </DisplayCard>
       </GridWrapper>
     )
 }
