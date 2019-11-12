@@ -100,13 +100,12 @@ class FileUploadContainer extends Component {
 
   // wont render without it
   modalChildren = (props) => {
-    console.log("mChildren",props)
 
     const options = _.map(props.fileValues, (file, key) => {
-      console.log(file.documentValue)
       return {
         key: file.documentValue,
-        text: file.documentValue
+        // text: file.documentValue
+        text: truncateFileName('https://cdn.synapsepay.com/uploads/2019/10/02/3BmuL7ytDEjFrQkhn9cOxY01GSXTU5wCoHA8z4aMiJsN6l2RWq.png', 16)
       };
     });
 
