@@ -51,7 +51,7 @@ const FileUploadContainer = () => {
         ]
       )}
       onDrop={() => alert('This is the onDrop function, which would be a function that updates the files')}
-      />
+    />
   )
 }
 

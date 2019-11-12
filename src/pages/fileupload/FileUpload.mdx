@@ -31,35 +31,35 @@ import FileUpload from './FileUpload.state';
       'documentValue': 'https://cdn.synapsepay.com/uploads/2019/10/02/3BmuL7.png'
     }
   }}
-  deleteAction={() => console.log('Delete Action')}
+  deleteAction={() => alert('This is the deleteAction function, which would delete the file')}
   fileUploadRowText={'1. Proof of account'}
   modalHeaderText={"Delete Document"}
   modalChildren={() => (
-      <CheckboxGroup
-        value={[]}
-        propName="checkedFiles"
-        onChange={() => {console.log('Modal box checked')}}
-        selectionType="classic"
-        width="300px"
-        options={[{key: "https://cdn.synapsepay.com/uploads/2019/10/02/3BmuL7.png", text: "2019/10/02/3B...png"}]}
-      />
+    <CheckboxGroup
+      value={[]}
+      propName="checkedFiles"
+      onChange={() => {console.log('Modal box checked')}}
+      selectionType="classic"
+      width="300px"
+      options={[{key: "https://cdn.synapsepay.com/uploads/2019/10/02/3BmuL7.png", text: "2019/10/02/3B...png"}]}
+    />
   )}
   modalButtons={() => (
-      [
-        {
-          text: 'Cancel',
-          style: false ? 'isDisabled' : 'secondary',
-          onClick: () => console.log('Cancel'),
-        },
-        {
-          text: 'Delete',
-          size: 'small',
-          style: false ? 'isLoading' : 'remove',
-          onClick: () => console.log('Delete')
-        }
-      ]
+    [
+      {
+        text: 'Cancel',
+        style: false ? 'isDisabled' : 'secondary',
+        onClick: () => console.log('Cancel'),
+      },
+      {
+        text: 'Delete',
+        size: 'small',
+        style: false ? 'isLoading' : 'remove',
+        onClick: () => console.log('Delete')
+      }
+    ]
   )}
-  onDrop={() => console.log('Upload file')}
+  onDrop={() => alert('This is the onDrop function, which would be a function that updates the files')}
 />
 
 ```
