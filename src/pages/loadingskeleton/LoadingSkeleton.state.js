@@ -5,7 +5,7 @@ const LoadingSkeletonContainer = () => {
   return (
     <LoadingSkeleton 
       height='100px'
-      width='840px'
+      width='420px'
       borderRadius='10px'
     />
   )
