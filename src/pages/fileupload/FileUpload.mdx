@@ -59,7 +59,6 @@ import FileUpload from './FileUpload.state';
 | acceptedFiles           | `array `           | false     | An array of strings which determines the file type     |
 | isLoading               | `bool`             | false     | Determines the loading state of the component    |
 | isMulti                 | `bool`             | false     | Determines if the file upload component accepts more than one file at a time                   |
-| deleteAction            | `function`         | true      | A function which gets called when a trashcan icon is clicked                  |
 | files                   | `array`            | false     | An array of objects containing file details, mainly used to determine local state of the component                   |
 | fileValues              | `objects`          | false     | An object which contains a list of file values denoted by id, used to track reducer/api state. Should remain in sync with the local state               |
 | fileUploadRowText       | `string`           | false     | Displays the document details for each file upload row          |
@@ -69,3 +68,12 @@ import FileUpload from './FileUpload.state';
 | modalButtons            | `array`            | true      | An array of components which renders the action buttons when a modal is shown            |
 | modalHeaderText         | `string`           | false     | Text shown in the header section of the modal              |
 | modalChildren           | `array`            | true      | An array of components which renders in the body of the modal            |
+| customText              | `function`            | false      | Allows for the user to input a custom component to render text inside the dropzone wrapper component           |
+| isDisabled              | `bool`                | false      | Disallows clicking, hover, or uploading interactions on the fileUpload component          |
+| deleteAction            | `function`            | true       | A function meant to override the default behavior of opening a modal when the trashcan icon is clicked          |
+| error                   | `bool`                | false      | Boolean value that turns the borders red, and status icon red as well. Error status should be passed when api returns back an error status for given uploaded document         |
+| idx                     | `number`              | false      | Determines rendering of fileUploadRow, and for other components relying on an index value      |
+| rowBorder               | `object`              | false      | An object with properties (top, left, right, bottom) these properties are optional and will take a string value determining their respective border directions      |
+| rowWidth                | `string`              | false      | String value which overrides default width of the fileUploadRow component      |
+
+
