@@ -1,0 +1,29 @@
+---
+name: Loading Skeleton
+route: /loadingskeleton
+---
+
+import LoadingSkeletonContainer from './LoadingSkeleton.state.js'
+
+# Loading Skeleton
+
+## Basic
+
+<LoadingSkeletonContainer />
+
+```jsx
+<LoadingSkeleton 
+  height='100px'
+  width='840px'
+  borderRadius='10px'
+/>
+```
+
+## Props
+
+| Property                | Type                    | Required  | Description                                 |
+| :-------                | :---                    | :-------  | :----------                                 |
+| height                  | `string`                 | false     | Height of LoadingSkeleton, defaults to 100%              |
+| width                   | `string`                | false     | Width of LoadingSkeleton, defaults to 100%                   |
+| borderRadius            | `string`                | false     | Border-radius of LoadingSkeleton, defaults to 0px     |
+
