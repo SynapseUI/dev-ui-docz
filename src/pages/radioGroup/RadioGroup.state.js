@@ -4,19 +4,20 @@ import RadioGroup from 'synapsefi-dev-ui/dist/components/RadioGroup/RadioGroup';
 class RadioGroupContainer extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { mtl: 'LICENSES' }
+    this.state = { STATEMENT_DELIVERY: false }
   }
 
   render(){
     return (
-      <RadioGroup
-        value={this.state.mtl}
-        labelWidth={"235px"}
-        selectionType="check"
-        onChange={e => this.setState({ mtl: e.target.value })}
-        label="Label Text"
-        options={[{ key: 'LICENSES', text: 'Upload Licenses' }, { key: 'LETTER', text: 'Upload Letter' }]}
-      />
+    <RadioGroup
+      value={this.state.STATEMENT_DELIVERY}
+      selectionType="check"
+      onChange={(e, value) => this.setState({ STATEMENT_DELIVERY: value })}
+      options={[
+        { key: false, text: 'Upload Licenses' },
+        { key: true, text: 'Upload Letter' },
+      ]}
+    />
     )
   }
 }
