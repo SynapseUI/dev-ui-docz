@@ -15,10 +15,6 @@
     "react-dropzone": "^10.1.10",
     "react-number-format": "^4.0.6",
     "styled-components": "^4.1.3",
-<<<<<<< HEAD
     "synapsefi-dev-ui": "^1.0.187-beta.15"
-=======
-    "synapsefi-dev-ui": "^1.0.187-beta.14"
->>>>>>> b98da3d59cfa42828f445653b85b9fcab6aad0ac
   }
 }
