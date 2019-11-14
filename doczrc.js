@@ -1,6 +1,6 @@
 export default {
   indexHtml: './index.html',
-  menu: ['Home', 'Button', 'Input','Display Card', 'Dropdown', 'CheckboxGroup', 'RadioGroup', 'Form', 'Modal', 'Panel', 'Table', 'Tag'],
+  menu: ['Home', 'Button', 'Input','Dropdown', 'CheckboxGroup', 'RadioGroup', 'Form', 'Modal', 'Panel', 'Table', 'Tag'],
   themeConfig: {
     styles: {
       body: {
