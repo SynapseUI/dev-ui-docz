@@ -12,34 +12,14 @@ import RadioGroupContainer from './RadioGroup.state';
 <RadioGroupContainer />
 
 ```jsx
-  <RadioGroup
-    value={this.state.product}
-    propName="products"
-    onChange={(e, value) => this.setState({ product: value })}
-    width="300px"
-    options={[
-      { key: 'DEPOSIT-US', text: 'Deposit Product' },
-      { key: 'CARD-US', text: 'Card Issusance' },
-      { key: 'panda', text: 'Panda' },
-    ]}
-  />
-```
-
-## Classic Style
-<RadioGroupContainer selectionType="classic" />
-
-```jsx
-  <RadioGroup
-    selectionType="classic"
-    value={this.state.product}
-    propName="products"
-    onChange={(e, value) => this.setState({ product: value })}
-    options={[
-      { key: 'DEPOSIT-US', text: 'Deposit Product' },
-      { key: 'CARD-US', text: 'Card Issusance' },
-      { key: 'panda', text: 'Panda' },
-    ]}
-  />
+<RadioGroup
+  value={this.state.mtl}
+  labelWidth={"235px"}
+  selectionType="check"
+  onChange={e => this.setState({ mtl: e.target.value })}
+  label="Label Text"
+  options={[{ key: 'LICENSES', text: 'Upload Licenses' }, { key: 'LETTER', text: 'Upload Letter' }]}
+/>
 ```
 
 ## Props
@@ -47,9 +27,9 @@ import RadioGroupContainer from './RadioGroup.state';
 | Property      | Type             | Required | Description |
 | :-------      | :---             | :------- | :---------- |
 | value         | `string`/`array` | true     | Value of the radio group |
-| propName      | `string`         | false    | Property name |
-| className     | `string`         | false    | className of radio group |
+| options       | `array`          | true     | List of items with a key and text parameter |
 | label         | `string`         | false    | Label of radio group |
+| description   | `string`         | false    | Goes with the Label component |
+| className     | `string`         | false    | className of radio group |
 | onChange      | `function`       | true     | Function fired when radio group's `onChange` event triggers. Arguments: (e, value, propName).|
-| selectionType | `string`         | false    | If equals to `classic` then radio group changes style |
-| width         | `string`         | false    | The width of each radio button |
+| labelWidth    | `string`         | false    | The width of each radio button |
