@@ -6,14 +6,19 @@ export default {
     'CheckboxGroup',
     'Display Card', 
     'Dropdown',
-    'Form', 
+    'File Upload',
+    'FloatingActionButton',
+    'Form',
+    'Icons', 
     'Input', 
     'Loading Skeleton', 
-    'Modal', 
+    'Modal',
+    'Page Level Alerts', 
     'Panel',
     'RadioGroup', 
     'Table', 
-    'Tag'
+    'Tag',
+    'Tooltip'
   ],
   themeConfig: {
     styles: {
