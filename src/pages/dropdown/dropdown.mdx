@@ -31,11 +31,19 @@ import DropdownContainer from './DropdownContainer.state';
 
 ## Props
 
-| Property    | Type             | Required | Description                                      |
-| :-------    | :---             | :------- | :----------                                      |
-| value       | `string`/`array` | true     | Value of the Dropddown                           |
-| options     | `array`          | true     | Menu options, must have `key` and `text` value   |
-| multiselect | `boolean`        | false    | Multiselect values, must set `value` to an array |
-| searchable  | `boolean`        | false    | Allows searchable options                        |
-| className   | `string`         | false    | Custome classname                                |
-| width       | `string`         | false    | Width of the bar and menu, i.e. `width: 100px`   |
+| Property      | Type             | Required | Description                                      |
+| :-------      | :---             | :------- | :----------                                      |
+| value         | `string`/`array` | true     | Value of the Dropddown                           |
+| options       | `array`          | true     | Menu options, must have `key` and `text` value   |
+| options[].key | `string`         | false     | Key of an option, this is what the "value" prop will update to when selected   |
+| options[].text| `string`         | false     | Text of an option, this is what the user will see within the menu list   |
+| onChange      | `function`       | false     | Triggers on selection.   |
+| propName      | `string`         | false     | Name of the field from the parent component, useful for onChange   |
+| label         | `string`         | false     | Label of the component, will appear above the dropdown   |
+| error         | `string`         | false     | Error message of the component, will appear below the dropdown and change border color   |
+| placeholder   | `string`         | false     | Placeholder value that will populate within the input   |
+| width         | `string`         | false     | Width of the bar and menu, i.e. `width: 100px`   |
+| className     | `string`         | false     | Custom classname                                |
+| searchable    | `boolean`        | false     | Allows the user to search for items by text values.                        |
+| multiselect   | `boolean`        | false     | Allows the user to select multiple values - requires value to be an array |
+| isFlipped     | `boolean`        | false     | Flips the orientation of the menu                                |
