@@ -1,0 +1,48 @@
+---
+name: StatusPage
+route: /statuspage
+---
+
+# Status Page
+
+import StatusPageContainer from './statusPage.state';
+
+## Basic
+
+<StatusPageContainer />
+
+```jsx
+<StatusPage
+  headerText='Success!'
+  iconData={iconItemData}
+  button={{
+    text: 'Close',
+    onClick: () => alert('OnClick funtion triggered')
+  }}
+  additionalLink={{
+    text: 'Visit API page',
+    onClick: () => window.open('https://docs.synapsefi.com/docs')
+  }}
+/>
+```
+
+## Props
+
+| Property               | Type        | Required | Description                  |
+| :--------------------- | :---------- | :------- | :--------------------------- |
+| headerText             | `string`    | true     | Header text          |
+| iconData               | `object`    | false    | Main content item(s) between Header and Action Buttons  |
+| iconData.svg           | `component` | false    | Icon for that item group |
+| iconData.text          | `string`    | false    | Primary text in the group        |
+| iconData.subtext       | `string`    | false    | Secondary text in the group        |
+| iconData.itemStyle     | `string`    | false    | String of css rendered on each item container          |
+| customContent          | `component` | false    | Custom component that would display in the place  |
+| button                 | `object`    | false    | Main button below the icon item |
+| button.text            | `string`    | false    | Button text        |
+| button.onClick         | `function`  | false    | Function fired on button click          |
+| additionalLink         | `object`    | false    | Link shown below the button  |
+| additionalLink.text    | `string`    | false    | Link text |
+| additionalLink.onClick | `function`  | false    | Function fired on link click        |
+| hideNavbar             | `bool`      | false    | Boolean that hides the NavBar, not needed if customNavbar included          |
+| customNavbar           | `component` | false    | Custom component that replaces the white Onboarding Navbar  |
+| coverFullScreen        | `bool`      | false    | Makes the component cover the entire page instead of sitting in its parent |
