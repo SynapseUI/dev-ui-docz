@@ -7,20 +7,38 @@ route: /radioGroup
 
 import { RadioGroup } from 'synapsefi-dev-ui';
 import RadioGroupContainer from './RadioGroup.state';
+import RadioGroupClassicContainer from './RadioGroupClassic.state';
 
 ## Basic
 <RadioGroupContainer />
 
 ```jsx
 <RadioGroup
-  value={this.state.mtl}
-  labelWidth={"235px"}
+  value={this.state.STATEMENT_DELIVERY}
   selectionType="check"
-  onChange={e => this.setState({ mtl: e.target.value })}
-  label="Label Text"
-  options={[{ key: 'LICENSES', text: 'Upload Licenses' }, { key: 'LETTER', text: 'Upload Letter' }]}
+  onChange={(e, value) => this.setState({ STATEMENT_DELIVERY: value })}
+  options={[
+    { key: false, text: 'Upload Licenses' },
+    { key: true, text: 'Upload Letter' },
+  ]}
 />
 ```
+
+## Classic Style
+<RadioGroupClassicContainer />
+
+```jsx
+<RadioGroup
+  value={this.state.STATEMENT_DELIVERY}
+  selectionType="classic"
+  onChange={(e, value) => this.setState({ STATEMENT_DELIVERY: value })}
+  options={[
+    { key: false, text: 'Upload Licenses' },
+    { key: true, text: 'Upload Letter' },
+  ]}
+/>
+```
+
 
 ## Props
 
@@ -33,3 +51,4 @@ import RadioGroupContainer from './RadioGroup.state';
 | className     | `string`         | false    | className of radio group |
 | onChange      | `function`       | true     | Function fired when radio group's `onChange` event triggers. Arguments: (e, value, propName).|
 | labelWidth    | `string`         | false    | The width of each radio button |
+| error         | `string`         | false    | Displays the string as red text |

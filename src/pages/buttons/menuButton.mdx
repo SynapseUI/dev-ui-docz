@@ -36,8 +36,14 @@ import FlexAlign from '../../common/FlexAlign';
 
 ## Props
 
-| Property  | Type     | Required | Description                                    |
-| :-------  | :---     | :------- | :----------                                    |
-| data      | `array`  | true     | List of menu items, needs "text" and "onClick" |
-| className | `string` | false    | Optional class name                            |
+| Property     | Type     | Required | Description                                    |
+| :-------     | :---     | :------- | :----------                                    |
+| className    | `string` | false    | Optional class name                            |
+| data         | `object` | true    | Entry row data in the menu |
+| data.text    | `string` | false    | Optional class name                            |
+| data.onClick | `function` | false    | Function fired on entry row click, menu automatically closes out onClick                           |
+| data.disabled| `bool`   | false    | Disables entry row and prevents from being clicked                           |
+| disabled     | `bool`   | false    | Button shows as disabled and prevents mouse actions                            |
+
+
 

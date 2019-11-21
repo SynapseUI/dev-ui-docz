@@ -4,16 +4,22 @@ export default {
     'Home', 
     'Button',
     'CheckboxGroup',
-    'Display Card', 
+    'DisplayCard', 
     'Dropdown',
-    'Form', 
+    'FileUpload',
+    'FloatingActionButton',
+    'Form',
+    'Icons', 
     'Input', 
-    'Loading Skeleton', 
-    'Modal', 
+    'LoadingSkeleton', 
+    'Modal',
+    'PageLevelAlerts', 
     'Panel',
     'RadioGroup', 
+    'StatusPage',
     'Table', 
-    'Tag'
+    'Tag',
+    'Tooltip'
   ],
   themeConfig: {
     styles: {
