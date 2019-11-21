@@ -99,7 +99,10 @@ export const buttonSettings = {
 | handleSubmit     | `function` | true     | Receives form's state and props, if async will trigger a isLoading state |
 | handleValidation | `function` | false    | Receives form's state and props, runs before handleSubmit, returns object with properties having errors i.e. { email: 'Not valid' }|
 | handleCancel     | `function` | false    | Cancel action |
-| buttonSettings   | `object`   | false    | `cancelButton` and `submitButton` button props, See Buttons. ie { {submitButton: {size: 'medium', text: 'Submit' } }|
+| buttonSettings   | `object`   | false    | Changes the styling properties of the submit and cancel buttons|
+| handleHidden     | `function`  | false   | Object of keys that will be hidden and uncalculated in when error checking |
+| disableCancelOnSubmit    | `boolean`  | false    | Affects if the handleCancel will trigger on a successful handleSubmit, defaults to false. |
+
 
 ## Form Data Props
 | Property | Type      | Required | Description |
@@ -109,3 +112,4 @@ export const buttonSettings = {
 | label    | `string`  | false    | String value of the label |
 | options  | `string`  | false    | Array of key and text values, applies to `Dropdown`, `CheckBoxGroup` and `RadioGroup` |
 | isChild  | `boolean` | false    | Defines order of children prop, pops the children list and pass props to it. Needs `propName` in order to pass state, errors and handleOnChange as props.|
+| label    | `string`  | false    | String value of the label |

@@ -29,8 +29,10 @@ import PanelContainer from './PanelContainer.state';
 
 | Property     | Type                    | Required | Description                       |
 | :-------     | :---                    | :------- | :----------                       |
-| isPanelOpen  | `bool`                  | true     | Defines when the modal is visible |
+| title        | `string`                | false    | Header text |
 | onPanelClose | `function`              | true     | Function that hides the panel     |
-| className    | `string`                | false    | className of Panel                |
-| headerText   | `string`                | false    | Header Text                       |
-| children     | `componet`/`DOMelement` | false    | Children componets                |
+| openPanelButton| `component`           | true     | Component that opens the panel when clicked |
+| onClickBeforeOpen | `function`         | false    | Function executed before panel opens     |
+| isPanelOpen  | `bool`                  | true     | Defines when the modal is visible |
+| downloadButtonData| `object`           | false    | Data for download button, which downloads a file on button click. {`fileDownload`,`icon`} |
+| emailButtonData  | `object`            | false    | Object with `recipient`, `subject`, and `body` strings, which routes user to an email when clicked |

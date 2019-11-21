@@ -39,7 +39,6 @@ class CountryPhoneInputContainer extends React.Component {
             { key: 'GBR', text: 'GBR' },
             { key: 'CAN', text: 'CAN' },
           ]}
-          getCallingCode={getCountryNumber}
         />
       </Wrapper>
     )
