@@ -7,49 +7,48 @@ route: /radioGroup
 
 import { RadioGroup } from 'synapsefi-dev-ui';
 import RadioGroupContainer from './RadioGroup.state';
+import RadioGroupClassicContainer from './RadioGroupClassic.state';
 
 ## Basic
 <RadioGroupContainer />
 
 ```jsx
-  <RadioGroup
-    value={this.state.product}
-    propName="products"
-    onChange={(e, value) => this.setState({ product: value })}
-    width="300px"
-    options={[
-      { key: 'DEPOSIT-US', text: 'Deposit Product' },
-      { key: 'CARD-US', text: 'Card Issusance' },
-      { key: 'panda', text: 'Panda' },
-    ]}
-  />
+<RadioGroup
+  value={this.state.STATEMENT_DELIVERY}
+  selectionType="check"
+  onChange={(e, value) => this.setState({ STATEMENT_DELIVERY: value })}
+  options={[
+    { key: false, text: 'Upload Licenses' },
+    { key: true, text: 'Upload Letter' },
+  ]}
+/>
 ```
 
 ## Classic Style
-<RadioGroupContainer selectionType="classic" />
+<RadioGroupClassicContainer />
 
 ```jsx
-  <RadioGroup
-    selectionType="classic"
-    value={this.state.product}
-    propName="products"
-    onChange={(e, value) => this.setState({ product: value })}
-    options={[
-      { key: 'DEPOSIT-US', text: 'Deposit Product' },
-      { key: 'CARD-US', text: 'Card Issusance' },
-      { key: 'panda', text: 'Panda' },
-    ]}
-  />
+<RadioGroup
+  value={this.state.STATEMENT_DELIVERY}
+  selectionType="classic"
+  onChange={(e, value) => this.setState({ STATEMENT_DELIVERY: value })}
+  options={[
+    { key: false, text: 'Upload Licenses' },
+    { key: true, text: 'Upload Letter' },
+  ]}
+/>
 ```
+
 
 ## Props
 
 | Property      | Type             | Required | Description |
 | :-------      | :---             | :------- | :---------- |
 | value         | `string`/`array` | true     | Value of the radio group |
-| propName      | `string`         | false    | Property name |
-| className     | `string`         | false    | className of radio group |
+| options       | `array`          | true     | List of items with a key and text parameter |
 | label         | `string`         | false    | Label of radio group |
+| description   | `string`         | false    | Goes with the Label component |
+| className     | `string`         | false    | className of radio group |
 | onChange      | `function`       | true     | Function fired when radio group's `onChange` event triggers. Arguments: (e, value, propName).|
-| selectionType | `string`         | false    | If equals to `classic` then radio group changes style |
-| width         | `string`         | false    | The width of each radio button |
+| labelWidth    | `string`         | false    | The width of each radio button |
+| error         | `string`         | false    | Displays the string as red text |
