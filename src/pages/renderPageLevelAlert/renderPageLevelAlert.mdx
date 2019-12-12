@@ -11,7 +11,21 @@ import AlertsContainer from './renderPageLevelAlert.state';
 <AlertsContainer />
 
 ```jsx
-  renderPageLevelAlert({ type: 'SUCCESS', message: 'Good Job' });
-  renderPageLevelAlert({ type: 'ERROR', message: '...I AM ERROR' });
-  renderPageLevelAlert({ type: 'WARNING', message: 'You forgot to add keys didnt you ' });
+  renderAlertBanner({ type: 'SUCCESS', message: 'Good Job' });
+  renderAlertBanner({ type: 'ERROR', message: '...I AM ERROR' });
+  renderAlertBanner({ type: 'WARNING', message: 'You forgot to add keys didnt you ' });
+```
+
+## Implementation
+
+Inorder to call `renderAlertBanner` at any point within the application
+you first need to render `OBAlertBanner` (preferably at or near the root component)
+
+```jsx
+<App>
+  ...
+  <OBAlertBanner />
+  ...
+  { rest of the applicaiton }
+</App>
 ```
