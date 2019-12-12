@@ -1,8 +1,24 @@
 import React from 'react';
-import styled from 'styled-components';
+import { SvgIcons } from 'synapsefi-dev-ui';
 import { FloatingActionButton } from 'synapsefi-dev-ui';
 
-import floatingActionButtonData from './floatingActionButton.data';
+const floatingActionButtonData = {
+  Test1: {
+    onClick: () => console.log('hi'),
+    text: 'test 1',
+    icon: <SvgIcons.crypto_wallet />
+  },
+  Test2: {
+    onClick: () => console.log('hi'),
+    text: 'test 2',
+    icon: <SvgIcons.deposit_account />
+  },
+  Test3: {
+    onClick: () => console.log('hi'),
+    text: 'test 3',
+    icon: <SvgIcons.payment/>
+  },
+};
 
 class FABContainer extends React.Component {
   constructor(props) {
@@ -17,7 +33,6 @@ class FABContainer extends React.Component {
         panelContent={
           <p>Some Content here</p>
         }
-
         data={floatingActionButtonData}
       />
     )
