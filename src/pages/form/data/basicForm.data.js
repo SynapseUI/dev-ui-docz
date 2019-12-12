@@ -37,7 +37,7 @@ export const handleSubmit = (values, props) => {
     setTimeout(function() {
       console.log('Submitting', values);
       resolve('foo');
-    }, 1000);
+    }, 2000);
   });
 };
 
@@ -59,6 +59,7 @@ export const buttonSettings = {
   },
   submitButton: {
     size: 'medium',
-    text: 'Custom Submit'
+    text: 'Submit',
+    loadingText: 'Submitting'
   }
 };

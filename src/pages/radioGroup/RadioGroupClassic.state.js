@@ -1,7 +1,7 @@
 import React from 'react';
 import RadioGroup from 'synapsefi-dev-ui/dist/components/RadioGroup/RadioGroup';
 
-class RadioGroupContainer extends React.Component {
+class RadioGroupClassicContainer extends React.Component {
   constructor(props) {
     super(props);
     this.state = { STATEMENT_DELIVERY: false }
@@ -11,7 +11,7 @@ class RadioGroupContainer extends React.Component {
     return (
     <RadioGroup
       value={this.state.STATEMENT_DELIVERY}
-      selectionType="check"
+      selectionType="classic"
       onChange={(e, value) => this.setState({ STATEMENT_DELIVERY: value })}
       options={[
         { key: false, text: 'Upload Licenses' },
@@ -22,4 +22,4 @@ class RadioGroupContainer extends React.Component {
   }
 }
 
-export default RadioGroupContainer;
+export default RadioGroupClassicContainer;

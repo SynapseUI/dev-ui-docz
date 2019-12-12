@@ -1,6 +1,26 @@
 export default {
   indexHtml: './index.html',
-  menu: ['Home', 'Button', 'Input', 'Dropdown', 'CheckboxGroup', 'RadioGroup', 'Form', 'Modal', 'Panel', 'Table', 'Tag'],
+  menu: [
+    'Home', 
+    'Button',
+    'CheckboxGroup',
+    'DisplayCard', 
+    'Dropdown',
+    'FileUpload',
+    'FloatingActionButton',
+    'Form',
+    'Icons', 
+    'Input', 
+    'LoadingSkeleton', 
+    'Modal',
+    'PageLevelAlerts', 
+    'Panel',
+    'RadioGroup', 
+    'StatusPage',
+    'Table', 
+    'Tag',
+    'Tooltip'
+  ],
   themeConfig: {
     styles: {
       body: {
