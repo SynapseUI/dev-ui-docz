@@ -1,11 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Table, SvgIcons } from 'synapsefi-dev-ui';
+import { TableContainer, SvgIcons } from 'synapsefi-dev-ui';
 
 import tableData from './data/tableData';
-import headerData from './data/headerData';
-import displayLegend from './data/displayLegend';
-import * as filterData from './data/filter.data';
+// import headerData from './data/headerData';
+// import displayLegend from './data/displayLegend';
+// import * as filterData from './data/filter.data';
 
 const Container = styled.div`
   .syn-dev-ui-table-container {
@@ -23,7 +23,7 @@ const DownloadButton = (props) => {
   );
 }
 
-class TableContainer extends React.Component {
+class TableContainerMain extends React.Component {
   constructor(props) {
     super(props);
 
@@ -59,94 +59,28 @@ class TableContainer extends React.Component {
       })
   }
 
-
-  // Only Applies to Filter
-  onFilter = (values) => {
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        console.log('On Filter values: ', values);
-        this.setState({
-          currentPage: 1,
-          tableData: {
-            1: {
-              1234: {
-                id: '1234',
-                username: 'Jim',
-                permission: 'SEND-AND-RECEIVE',
-                date: '10/1/2013',
-                business: 'Great Company'
-              },
-              1236: {
-                id: '1236',
-                username: 'Ryan',
-                permission: 'RECEIVE',
-                date: '10/3/2013',
-                business: 'Greater Company'
-              },
-            },
-            2: {
-              1238: {
-                id: '1238',
-                username: 'Carry',
-                permission: 'SEND-AND-RECEIVE',
-                date: '10/1/2013',
-                business: 'Great Company'
-              },
-              1239: {
-                id: '1239',
-                username: 'Joe',
-                permission: 'RECEIVE',
-                date: '10/2/2013',
-                business: 'Greater Company'
-              }
-            }
-          }
-          
-        })
-        resolve(values);
-      }, 2000);
-    }).then(() => this.setState({ searchType: 'Transaction ID' }))
-  }
-
   render() {
-    const { tableData, currentPage, filters, searchType } = this.state;
+    const { tableData, currentPage } = this.state;
 
     return (
       <Container>
-        <Table
-
+        <TableContainer
+          tableType='user'
+          environment="admin"
           // Data files
           tableData={tableData[currentPage]}
-          headData={headerData}
-          displayLegend={displayLegend}
-          checkIfNewRow={(value) => value && (value.id === '1234') }
 
-          // OnClick actions
-          handleRowOnClick={this.handleOnClick}
-          onClickPageChange={this.onClickPageChange}
+          onSearch={this.onClickPageChange}
+          onRowClick={(id, rowValues) => console.log('id', id, 'rowValues', rowValues)}
 
           // pass from redux store
-          page={currentPage}
           page_count={Object.keys(tableData).length}
           total_count={12}
 
           // Top Bar (Optional Props)
-          topBarComponent={
+          leftComponent={
             <DownloadButton />
           }
-
-          // Filter
-          filterFormData={filterData}
-          filters={filters}
-          onFilter={this.onFilter}
-          isFetching={this.state.isFetching}
-          filterColumnLimit={2}
-
-          filterCSS={`grid-template-columns: 2fr 1fr;`}
-          
-          // Can add extra props if needed
-          // testProp={{ test: 'hi' }}
-          // searchType={searchType}
         />
 
         {/* <Button small onClick={() => this.setState({ isFetching: !this.state.isFetching })}>Fetch</Button> */}
@@ -156,4 +90,4 @@ class TableContainer extends React.Component {
   }
 }
 
-export default TableContainer;
+export default TableContainerMain;
