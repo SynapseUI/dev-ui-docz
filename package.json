@@ -13,7 +13,7 @@
     "react-dropzone": "^10.1.10",
     "react-number-format": "^4.0.6",
     "styled-components": "^4.1.3",
-    "synapsefi-dev-ui": "^2.0.2"
+    "synapsefi-dev-ui": "^2.0.6"
   },
   "peerDependencies": {
     "react": "^16.10.2",
