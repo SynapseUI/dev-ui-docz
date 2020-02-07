@@ -28,8 +28,7 @@ class TableContainerMain extends React.Component {
     super(props);
 
     this.state = {
-      tableData,
-      currentPage: 1,
+      currentPage: '',
       isFetching: false,
 
       // Only applies to Filter
@@ -60,7 +59,7 @@ class TableContainerMain extends React.Component {
   }
 
   render() {
-    const { tableData, currentPage } = this.state;
+    const { currentPage } = this.state;    
 
     return (
       <Container>
