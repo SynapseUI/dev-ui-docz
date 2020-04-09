@@ -18,8 +18,17 @@ import { SvgIcons } from 'synapsefi-dev-ui';
 ```
 ## Props
 
-| Property       | Type             | Required | Description |
-| :-------       | :---             | :------- | :---------- |
-| size           | `string`         | false    | size contains both height and width of icon|
-| className      | `string`         | false    | className of icon |
-| fill/fillColor | `string`         | false    | color value for icon. Note: if fillColor doesn't work, use fill instead |
+| Property            | Type                 | Required | Description |
+| :-------            | :---                 | :------- | :---------- |
+| size                | `string`/`integer`   | false    | size contains both height and width of icon|
+| className           | `string`             | false    | className of icon |
+| fill/fillColor      | `string`             | false    | color value for icon. Note: if fillColor doesn't work, use fill instead |
+| color               | `string`             | false    | color replaces the fill of each `path` of the SVG|
+| hoverColor          | `string`             | false    | on hover, hoverColor replaces the fill of each `path` of the SVG|
+| activeColor         | `string`             | false    | when clicked, activeColor replaces the fill of each `path` of the SVG|
+| rotate_ccw_slow     | `boolean`            | false    | animation which rotates the icon counter-clockwise slowly (`10s`) |
+| rotate_ccw_normal   | `boolean`            | false    | animation which rotates the icon counter-clockwise at a normal speed (`2.5s`) |
+| rotate_ccw_fast     | `boolean`            | false    | animation which rotates the icon counter-clockwise quickly (`1s`) |
+| right               | `boolean`            | false    | transforms the icon `90°` to the right |
+| left                | `boolean`            | false    | transforms the icon `90°` to the left |
+| down                | `boolean`            | false    | transforms the icon `180°` (upside-down) |
